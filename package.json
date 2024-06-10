@@ -1,0 +1,13 @@
+{
+  "name": "pimpim",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "build": "Write-Output 'Building project...' ; Copy-Item -Path public\* -Destination dist\ -Recurse -Force",
+    "start": "Write-Output 'Starting project...' ; node src/index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
+
