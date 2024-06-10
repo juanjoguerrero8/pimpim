@@ -19,14 +19,15 @@ jobs:
         node-version: '14'  # Usa la versión de Node.js que necesitas
 
     - name: Install dependencies
-      run: npm install
+      run: npm ci
 
     - name: Build the project
-      run: npm run build  # Ejecuta el script de compilación
+      run: npm run build  # Ejecuta el script de construcción
 
     - name: Deploy to Firebase Hosting
       uses: w9jds/firebase-action@v2.2.0
       with:
         args: deploy --only hosting
       env:
-        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN_PIMPIM }}
+        FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+
