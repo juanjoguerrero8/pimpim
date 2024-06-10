@@ -1,7 +1,6 @@
 {
   "projects": {
-    "default": "pimpim-79a69",
-    "web": "pimpim-79a69"
+    "default": "pimpim-79a69"
   },
   "targets": {},
   "etags": {},
