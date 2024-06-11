@@ -158,18 +158,13 @@ a:hover {
         </a>
       </div>
     </div>
-    <div id="contact-form-mail" class="contact-form">
-      <form action="send_email.php" method="post">
-        <label for="name">Nombre:</label>
-        <input type="text" id="name" name="name"><br><br>
-        <label for="email">Correo electrónico:</label>
-        <input type="email" id="email" name="email"><br><br>
-        <label for="subject">Asunto:</label>
-        <input type="text" id="subject" name="subject"><br><br>
-        <label for="message">Mensaje:</label><br>
-        <textarea id="message" name="message" rows="4" cols="50"></textarea><br><br>
+    <div id="contact-form-mail" class="contact-form" style="display: none;">
+      <form action="mailto:pimpimfotomatones@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
         <input type="submit" value="Enviar">
-    </form>
+      </form>
     </div>
   </div>
 </div>
@@ -230,14 +225,6 @@ function toggleContactForm(method) {
   }
 }
 
-function toggleContactSection() {
-  if (contactSection.style.display === 'none' || contactSection.style.display === '') {
-    contactSection.style.display = 'block';
-  } else {
-    contactSection.style.display = 'none';
-  }
-}
-
 // Cerrar la sección de contacto cuando se hace clic fuera de ella
 window.onclick = function(event) {
   if (event.target == contactSection) {
@@ -246,16 +233,6 @@ window.onclick = function(event) {
 }
 </script>
 
-<script>
-    function prepareEmail() {
-        var name = document.getElementById("name").value;
-        var email = document.getElementById("email").value;
-        var message = document.getElementById("message").value;
-        var subject = document.getElementById("subject").value;
-
-        document.forms[0].action = "mailto:pimpimfotomatones@gmail.com?subject=" + encodeURIComponent(subject + " " + name) + "&body=" +  encodeURIComponent(message);
-    }
-</script>
-
 </body>
 </html>
+
