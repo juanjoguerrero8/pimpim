@@ -67,9 +67,9 @@ a:hover {
   display: flex;
   justify-content: space-around;
   margin-top: 20px;
+  align-items: center; /* Alinea verticalmente los elementos */
 }
 .contact-option {
-  flex: 1;
   margin: 0 10px;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.1);
@@ -110,6 +110,17 @@ a:hover {
 .contact-form input[type="submit"]:hover {
   background-color: #696969;
 }
+/* Media query para dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .contact-options {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contact-option {
+    margin: 10px 0;
+    width: 80%;
+  }
+}
 </style>
 </head>
 <body>
@@ -131,30 +142,41 @@ a:hover {
 
 <div id="contact" class="contact-section w3-center">
   <h2>Contacto</h2>
-  <div class="contact-options">
-    <div class="contact-option" onclick="toggleContactForm('mail')">
-      <h3><img src="images/mail_icon.png" alt="Mail Icon">Escríbenos un mail</h3> <!-- Ruta de tu icono de correo -->
+  <div class="contact-container">
+    <div class="contact-options">
+      <div class="contact-option">
+        <a href="https://wa.me/tu_numero_telefono" target="_blank">
+          <h3><img src="images/whatsapp_icon.png" alt="WhatsApp Icon">WhatsApp</h3> <!-- Ruta de tu icono de WhatsApp -->
+        </a>
+      </div>
+      <div class="contact-option" onclick="toggleContactForm('mail')">
+        <h3><img src="images/mail_icon.png" alt="Mail Icon">Escríbenos un mail</h3> <!-- Ruta de tu icono de correo -->
+      </div>
+      <div class="contact-option">
+        <a href="https://www.instagram.com/tu_cuenta_instagram" target="_blank">
+          <h3><img src="images/instagram_icon.png" alt="Instagram Icon">Instagram</h3> <!-- Ruta de tu icono de Instagram -->
+        </a>
+      </div>
     </div>
-    <div class="contact-option">
-      <a href="https://wa.me/tu_numero_telefono" target="_blank">
-        <h3><img src="images/whatsapp_icon.png" alt="WhatsApp Icon">WhatsApp</h3> <!-- Ruta de tu icono de WhatsApp -->
-      </a>
+    <div id="contact-form-mail" class="contact-form">
+      <form action="mailto:pimpimfotomatones@gmail.com" method="post" enctype="text/plain">
+        <input type="text" name="name" placeholder="Tu nombre" required>
+        <input type="email" name="email" placeholder="Tu correo electrónico" required>
+        <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
+        <input type="submit" value="Enviar">
+      </form>
     </div>
-    <div class="contact-option">
-      <a href="https://www.instagram.com/tu_cuenta_instagram" target="_blank">
-        <h3><img src="images/instagram_icon.png" alt="Instagram Icon">Instagram</h3> <!-- Ruta de tu icono de Instagram -->
-      </a>
-    </div>
-  </div>
-  <div id="contact-form-mail" class="contact-form">
-    <form action="mailto:pimpimfotomatones@gmail.com" method="post" enctype="text/plain">
-      <input type="text" name="name" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
-      <textarea name="message" placeholder="Tu mensaje" rows="5" required></textarea>
-      <input type="submit" value="Enviar">
-    </form>
   </div>
 </div>
+
+<style>
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+</style>
+
 
 <script>
 // Countdown Timer
