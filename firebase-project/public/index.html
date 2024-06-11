@@ -95,6 +95,19 @@ a:hover {
 .contact-form input[type="submit"]:hover {
   background-color: #696969; /* Gris más oscuro al pasar el cursor */
 }
+
+/* Media queries para hacer la página responsiva */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 3em;
+  }
+  .contact-options {
+    flex-direction: column;
+  }
+  .contact-option {
+    margin: 10px 0;
+  }
+}
 </style>
 </head>
 <body>
@@ -130,6 +143,7 @@ a:hover {
         <h3><img src="images/instagram_icon.png" alt="Instagram Icon">Instagram</h3> <!-- Ruta de tu icono de Instagram -->
       </a>
     </div>
+
   </div>
   <div id="contact-form-mail" class="contact-form">
     <form action="mailto:pimpimfotomatones@gmail.com" method="post" enctype="text/plain">
@@ -140,7 +154,6 @@ a:hover {
     </form>
   </div>
 </div>
-
 <script>
 // Countdown Timer
 var countDownDate = new Date("July 1, 2024 00:00:00").getTime();
@@ -177,6 +190,5 @@ function toggleContactForm(method) {
   }
 }
 </script>
-
 </body>
 </html>
