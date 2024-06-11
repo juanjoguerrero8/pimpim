@@ -40,9 +40,23 @@ a:hover {
   color: lightgrey;
 }
 .contact-section {
-  display: none; /* Oculta la sección de contacto por defecto */
+  display: none;
   background-color: rgba(0, 0, 0, 0.7);
   padding: 50px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 9999; /* Asegura que la sección se muestre sobre el contenido */
+}
+.contact-section::-webkit-scrollbar {
+  width: 10px;
+}
+.contact-section::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 5px;
 }
 .contact-section h2 {
   font-family: 'Bebas Neue', sans-serif;
@@ -89,12 +103,12 @@ a:hover {
   width: 80%;
 }
 .contact-form input[type="submit"] {
-  background-color: #808080; /* Color gris */
+  background-color: #808080;
   color: white;
   cursor: pointer;
 }
 .contact-form input[type="submit"]:hover {
-  background-color: #696969; /* Gris más oscuro al pasar el cursor */
+  background-color: #696969;
 }
 </style>
 </head>
@@ -154,7 +168,7 @@ var countdownfunction = setInterval(function() {
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds  = Math.floor((distance % (1000 * 60)) / 1000);
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
   document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
@@ -169,7 +183,7 @@ var countdownfunction = setInterval(function() {
 var contactSection = document.getElementById('contact');
 
 function toggleContactSection() {
-  if (contactSection.style.display === 'none') {
+  if (contactSection.style.display === 'none' || contactSection.style.display === '') {
     contactSection.style.display = 'block';
   } else {
     contactSection.style.display = 'none';
@@ -186,6 +200,13 @@ function toggleContactForm(method) {
     } else {
       contactFormMail.style.display = 'none';
     }
+  }
+}
+
+// Cerrar la sección de contacto cuando se hace clic fuera de ella
+window.onclick = function(event) {
+  if (event.target == contactSection) {
+    toggleContactSection();
   }
 }
 </script>
