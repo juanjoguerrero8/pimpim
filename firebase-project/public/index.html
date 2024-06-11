@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>PimPim Fotomatones</title>
+<title>Fotomatones para Eventos</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -40,6 +40,7 @@ a:hover {
   color: lightgrey;
 }
 .contact-section {
+  display: none; /* Oculta la sección de contacto por defecto */
   background-color: rgba(0, 0, 0, 0.7);
   padding: 50px;
 }
@@ -95,19 +96,6 @@ a:hover {
 .contact-form input[type="submit"]:hover {
   background-color: #696969; /* Gris más oscuro al pasar el cursor */
 }
-
-/* Media queries para hacer la página responsiva */
-@media screen and (max-width: 768px) {
-  h1 {
-    font-size: 3em;
-  }
-  .contact-options {
-    flex-direction: column;
-  }
-  .contact-option {
-    margin: 10px 0;
-  }
-}
 </style>
 </head>
 <body>
@@ -120,7 +108,7 @@ a:hover {
     <h1 class="w3-animate-top">PRÓXIMAMENTE</h1>
     <hr class="w3-border-grey" style="margin:auto;width:40%">
     <p class="w3-large" id="countdown">35 days left</p>
-    <button class="w3-button w3-grey w3-large" onclick="document.getElementById('contact').scrollIntoView();">Contacta con nosotros</button>
+    <button class="w3-button w3-grey w3-large" onclick="toggleContactSection()">Contacta con nosotros</button>
   </div>
   <div class="w3-display-bottomleft w3-padding-large">
     Created by <a href="https://github.com/juanjoguerrero8" target="_blank" class="w3-hover-opacity">juanjoguerrero8</a>
@@ -134,16 +122,15 @@ a:hover {
       <h3><img src="images/mail_icon.png" alt="Mail Icon">Escríbenos un mail</h3> <!-- Ruta de tu icono de correo -->
     </div>
     <div class="contact-option">
-      <a href="https://wa.me/628145508" target="_blank">
+      <a href="https://wa.me/tu_numero_telefono" target="_blank">
         <h3><img src="images/whatsapp_icon.png" alt="WhatsApp Icon">WhatsApp</h3> <!-- Ruta de tu icono de WhatsApp -->
       </a>
     </div>
     <div class="contact-option">
-      <a href="https://www.instagram.com/pimpimfotomatones" target="_blank">
+      <a href="https://www.instagram.com/tu_cuenta_instagram" target="_blank">
         <h3><img src="images/instagram_icon.png" alt="Instagram Icon">Instagram</h3> <!-- Ruta de tu icono de Instagram -->
       </a>
     </div>
-
   </div>
   <div id="contact-form-mail" class="contact-form">
     <form action="mailto:pimpimfotomatones@gmail.com" method="post" enctype="text/plain">
@@ -154,6 +141,7 @@ a:hover {
     </form>
   </div>
 </div>
+
 <script>
 // Countdown Timer
 var countDownDate = new Date("July 1, 2024 00:00:00").getTime();
@@ -166,7 +154,7 @@ var countdownfunction = setInterval(function() {
   var days = Math.floor(distance / (1000 * 60 * 60 * 24));
   var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  var seconds  = Math.floor((distance % (1000 * 60)) / 1000);
 
   document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
   + minutes + "m " + seconds + "s ";
@@ -176,6 +164,17 @@ var countdownfunction = setInterval(function() {
     document.getElementById("countdown").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+// Toggle contact section
+var contactSection = document.getElementById('contact');
+
+function toggleContactSection() {
+  if (contactSection.style.display === 'none') {
+    contactSection.style.display = 'block';
+  } else {
+    contactSection.style.display = 'none';
+  }
+}
 
 // Toggle contact form
 var contactFormMail = document.getElementById('contact-form-mail');
@@ -190,5 +189,7 @@ function toggleContactForm(method) {
   }
 }
 </script>
+
 </body>
 </html>
+
