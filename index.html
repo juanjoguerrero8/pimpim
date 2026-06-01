@@ -49,18 +49,18 @@
         "mainEntity": [
             {
                 "@type": "Question",
-                "name": "¿Los precios incluyen IVA?",
+                "name": "¿Los importes desde incluyen IVA?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No. Las tarifas 2026 indicadas en la web son precios sin IVA."
+                    "text": "No. Los importes orientativos se muestran sin IVA."
                 }
             },
             {
                 "@type": "Question",
-                "name": "¿Las tarifas pueden cambiar por distancia?",
+                "name": "¿El presupuesto puede cambiar por distancia?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Sí. Las tarifas podrían modificarse en función de la distancia y la logística del evento."
+                    "text": "Sí. El presupuesto final depende de distancia, municipio, horas y logística del evento."
                 }
             },
             {
@@ -91,13 +91,20 @@
                 <span>Pimpim Fotomatones</span>
             </a>
             <nav class="site-nav" aria-label="Navegación principal">
-                <a href="#servicios">Servicios</a>
-                <a href="#precios">Precios</a>
-                <a href="#extras">Extras</a>
-                <a href="opiniones.html">Eventos</a>
-                <a href="madrid.html">Madrid</a>
-                <a href="guadalajara.html">Guadalajara</a>
-                <a class="nav-cta" href="#presupuesto">Presupuesto</a>
+                <details class="nav-dropdown">
+                    <summary>Servicios</summary>
+                    <div class="nav-dropdown-panel">
+                        <a href="fotomaton.html">Fotomatón</a>
+                        <a href="videomaton.html">Videomatón</a>
+                        <a href="fotomaton-espejo.html">Fotomatón Espejo</a>
+                        <a href="plataforma-360.html">Plataforma 360</a>
+                        <a href="index.html#extras">Extras</a>
+                    </div>
+                </details>
+                <a href="opiniones.html#eventos">Eventos</a>
+                <a href="opiniones.html#bodas-net">Opiniones</a>
+                <a href="quienes-somos.html">Quiénes somos</a>
+                <a class="nav-cta" href="index.html#presupuesto">Presupuesto</a>
             </nav>
         </div>
     </header>
@@ -115,7 +122,7 @@
                         <a class="button button-primary" href="https://wa.me/34684768462?text=Hola%20Pimpim%2C%20quiero%20pedir%20presupuesto.%20Fecha%3A%20%20Lugar%3A%20%20Servicio%3A%20%20Horas%3A%20%20Invitados%3A%20" target="_blank" rel="noreferrer" data-track="whatsapp_click" data-track-label="hero">
                             Pedir por WhatsApp
                         </a>
-                        <a class="button button-secondary" href="#precios" data-track="pricing_click" data-track-label="hero">Ver tarifas 2026</a>
+                        <a class="button button-secondary" href="#servicios" data-track="service_page_click" data-track-label="hero">Ver servicios</a>
                     </div>
                     <ul class="hero-points">
                         <li>Fotomatón, videomatón, fotomatón espejo y plataforma 360.</li>
@@ -131,7 +138,7 @@
                 <p><strong>350€</strong><span>Fotomatón 2h desde</span></p>
                 <p><strong>Full HD</strong><span>Videomensajes</span></p>
                 <p><strong>GoPro</strong><span>Plataforma 360</span></p>
-                <p><strong>2026</strong><span>Tarifas sin IVA</span></p>
+                <p><strong>2026</strong><span>Desde 350€</span></p>
             </div>
         </section>
 
@@ -231,36 +238,6 @@
             </div>
         </section>
 
-        <section class="section" id="precios">
-            <div class="wrap">
-                <div class="section-heading reveal">
-                    <p class="eyebrow">Tarifas 2026</p>
-                    <h2>Precios claros para comparar servicios.</h2>
-                    <p>Precios sin IVA. Las tarifas podrían modificarse en función de la distancia.</p>
-                </div>
-                <div class="table-wrap reveal reveal-delay">
-                    <table class="pricing-table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Servicio</th>
-                                <th scope="col">2 horas</th>
-                                <th scope="col">3 horas</th>
-                                <th scope="col">Extra</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr><th scope="row">Fotomatón</th><td>350€</td><td>430€</td><td>No</td></tr>
-                            <tr><th scope="row">Videomatón</th><td>400€</td><td>475€</td><td>No</td></tr>
-                            <tr><th scope="row">Fotomatón espejo</th><td>500€</td><td>575€</td><td>No</td></tr>
-                            <tr><th scope="row">Plataforma 360</th><td>400€</td><td>475€</td><td>No</td></tr>
-                            <tr><th scope="row">Fotomatón + 360</th><td>700€</td><td>750€</td><td>3h con extra: 800€</td></tr>
-                            <tr><th scope="row">Fotomatón espejo + 360</th><td>800€</td><td>850€</td><td>3h con extra: 900€</td></tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
         <section class="section section-gallery" id="galeria">
             <div class="wrap">
                 <div class="section-heading reveal">
@@ -349,12 +326,12 @@
                 </div>
                 <div class="faq-list reveal reveal-delay">
                     <details>
-                        <summary>¿Los precios incluyen IVA?</summary>
-                        <p>No. Las tarifas 2026 de la web son precios sin IVA.</p>
+                        <summary>¿Los importes desde incluyen IVA?</summary>
+                        <p>No. Los importes orientativos se muestran sin IVA.</p>
                     </details>
                     <details>
-                        <summary>¿Puede cambiar el precio por distancia?</summary>
-                        <p>Sí. Las tarifas podrían modificarse en función de la distancia y la logística del evento.</p>
+                        <summary>¿Puede cambiar el presupuesto por distancia?</summary>
+                        <p>Sí. El presupuesto final depende de distancia, municipio, horas y logística del evento.</p>
                     </details>
                     <details>
                         <summary>¿Qué incluye el fotomatón?</summary>
@@ -478,7 +455,7 @@
 
                     <p class="form-status" id="budget-form-status" aria-live="polite"></p>
                     <button class="button button-primary" type="submit" data-track="form_button_click" data-track-label="budget_form">Solicitar presupuesto</button>
-                    <p class="form-note" id="budget-form-note">Precios sin IVA. Las tarifas podrían modificarse en función de la distancia y la logística del evento.</p>
+                    <p class="form-note" id="budget-form-note">Servicios desde 350€ sin IVA. El presupuesto final depende de fecha, municipio, horas y logística del evento.</p>
                 </form>
             </div>
         </section>

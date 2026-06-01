@@ -1,15 +1,16 @@
 # Pimpim Fotomatones
 
-Sitio estático preparado para Cloudflare Pages. La web usa la información del dossier `Pimpim2026.pdf`: empresa madrileña, servicios reales, teléfono, redes y tarifas 2026.
+Sitio estático preparado para Cloudflare Pages. La web usa la información del dossier `Pimpim2026.pdf`: empresa madrileña, servicios reales, teléfono, redes e importes 2026.
 
 ## Estructura
 
-- `index.html`: landing principal con propuesta de valor, servicios, tarifas, galería, extras, personalización y formulario.
+- `index.html`: landing principal con propuesta de valor, servicios, galería, extras, personalización y formulario.
 - `fotomaton.html`: página de fotomatón.
 - `videomaton.html`: página de videomatón.
 - `fotomaton-espejo.html`: página de fotomatón espejo.
 - `plataforma-360.html`: página de plataforma 360.
 - `bodas.html`: página específica para bodas y personalización.
+- `quienes-somos.html`: página de marca, equipo y cobertura en Madrid/Guadalajara.
 - `madrid.html`: landing local para búsquedas y campañas en Madrid.
 - `guadalajara.html`: landing local para búsquedas y campañas en Guadalajara y provincia.
 - `alcala-de-henares.html`, `torrejon-de-ardoz.html`, `meco.html`, `azuqueca-de-henares.html` y otras páginas locales: landings por municipio.
@@ -49,9 +50,9 @@ Comandos disponibles:
 - Web: `www.pimpimfotomatones.com`
 - LinkedIn: `Pimpim Fotomatones`
 
-## Servicios y tarifas 2026
+## Referencia interna de importes 2026
 
-Precios sin IVA. Las tarifas podrían modificarse en función de la distancia.
+Importes sin IVA. El presupuesto visible en la web se comunica como "desde" y puede modificarse en función de la distancia, horas y logística.
 
 - Fotomatón: 2h `350€`, 3h `430€`
 - Videomatón: 2h `400€`, 3h `475€`

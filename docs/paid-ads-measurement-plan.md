@@ -14,8 +14,7 @@ Documento operativo para preparar campañas sin activar todavía etiquetas exter
 - `whatsapp_click`: clic en WhatsApp.
 - `form_submit`: envío de formulario.
 - `form_button_click`: clic en botón de formulario.
-- `service_page_click`: clic a páginas de servicio.
-- `pricing_click`: clic a tarifas.
+- `service_page_click`: clic a páginas o secciones de servicio.
 - `social_click`: clic a Instagram o TikTok.
 
 ## Landing pages listas para campaña
@@ -57,7 +56,7 @@ Documento operativo para preparar campañas sin activar todavía etiquetas exter
 - Titular: `Fotomatón espejo y plataforma 360`
 - Titular: `Pimpim Fotomatones Madrid`
 - Descripción: `Fotos ilimitadas, atrezzo, álbum físico, USB y logo personalizado. Presupuesto por WhatsApp.`
-- Descripción: `Videomatón, fotomatón espejo y 360 para bodas y eventos. Tarifas 2026 sin IVA.`
+- Descripción: `Videomatón, fotomatón espejo y 360 para bodas y eventos. Desde 350€ y presupuesto por WhatsApp.`
 
 ## Antes de activar campañas
 
