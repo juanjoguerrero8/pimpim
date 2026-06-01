@@ -10,6 +10,7 @@ Sitio estático preparado para Cloudflare Pages. La web usa la información del 
 - `fotomaton-espejo.html`: página de fotomatón espejo.
 - `plataforma-360.html`: página de plataforma 360.
 - `bodas.html`: página específica para bodas y personalización.
+- `madrid.html`: landing local para búsquedas y campañas en Madrid.
 - `opiniones.html`: página de eventos/trabajos y enlaces sociales.
 - `gracias.html`: destino de confirmación del formulario.
 - `privacidad.html`: estructura legal provisional.
