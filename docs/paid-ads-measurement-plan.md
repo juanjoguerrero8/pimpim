@@ -26,6 +26,7 @@ Documento operativo para preparar campañas sin activar todavía etiquetas exter
 - `/plataforma-360.html`: intención "plataforma 360".
 - `/bodas.html`: intención "fotomatón para bodas".
 - `/madrid.html`: intención local "fotomatón Madrid", "plataforma 360 Madrid" y eventos en Madrid.
+- `/corredor-henares-guadalajara.html`: intención local para Corredor del Henares, A-2 y Guadalajara.
 
 ## Grupos iniciales de Google Ads Search
 
@@ -35,6 +36,7 @@ Documento operativo para preparar campañas sin activar todavía etiquetas exter
 - Videomatón: `videomatón boda`, `videomensajes boda`, `fotomatón con vídeo`.
 - Packs: `fotomatón 360 boda`, `fotomatón y plataforma 360`.
 - Local Madrid: `fotomatón Madrid`, `fotomatón para eventos Madrid`, `plataforma 360 Madrid`, `fotomatón bodas Madrid`.
+- Local Corredor/Guadalajara: `fotomatón Alcalá de Henares`, `fotomatón Torrejón de Ardoz`, `fotomatón Azuqueca de Henares`, `fotomatón Guadalajara`, `plataforma 360 Guadalajara`.
 
 ## Negativas iniciales
 

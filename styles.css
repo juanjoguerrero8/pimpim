@@ -764,6 +764,67 @@ p {
     padding: 1.2rem;
 }
 
+.budget-form-stacked {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.form-card,
+.form-question-card {
+    position: relative;
+    border: 1px solid rgba(33, 31, 29, 0.14);
+    border-radius: var(--radius);
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(33, 31, 29, 0.08);
+}
+
+.form-card-title {
+    padding: 1.3rem 1.4rem 1.15rem;
+    border-top: 0.42rem solid #1d65c9;
+}
+
+.form-card-title h3 {
+    font-family: "Manrope", Arial, sans-serif;
+    font-size: 1.45rem;
+}
+
+.form-card-title p {
+    margin: 0.45rem 0 0;
+    color: var(--muted);
+}
+
+.form-question-card {
+    display: grid;
+    gap: 0.9rem;
+    padding: 1.25rem 1.4rem;
+    font-weight: 700;
+}
+
+.form-question-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 0.22rem;
+    border-radius: var(--radius) 0 0 var(--radius);
+    background: transparent;
+}
+
+.form-question-card:focus-within::before {
+    background: #1d65c9;
+}
+
+.form-field-label {
+    margin: 0;
+    font-weight: 800;
+}
+
+.required-mark {
+    color: var(--accent);
+}
+
 .budget-form label {
     display: grid;
     gap: 0.42rem;
@@ -787,10 +848,26 @@ p {
     resize: vertical;
 }
 
+.budget-form-stacked input:not([type="checkbox"]),
+.budget-form-stacked select,
+.budget-form-stacked textarea {
+    min-height: 2.45rem;
+    padding: 0.35rem 0 0.25rem;
+    border: 0;
+    border-bottom: 1px dotted rgba(33, 31, 29, 0.42);
+    border-radius: 0;
+    background: transparent;
+}
+
+.budget-form-stacked textarea {
+    min-height: 4.5rem;
+}
+
 .budget-form input:focus,
 .budget-form select:focus,
 .budget-form textarea:focus {
     border-color: var(--accent);
+    outline-offset: 0.35rem;
 }
 
 .full-span,
@@ -805,6 +882,42 @@ p {
     margin: 0;
     color: var(--accent-dark);
     font-weight: 800;
+}
+
+.form-policy-card {
+    gap: 0.75rem;
+}
+
+.checkbox-line {
+    display: flex !important;
+    grid-template-columns: none !important;
+    align-items: flex-start;
+    gap: 0.7rem !important;
+    color: var(--muted);
+    font-weight: 600 !important;
+}
+
+.checkbox-line input {
+    width: 1.1rem;
+    min-width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.15rem;
+    accent-color: var(--accent);
+}
+
+.checkbox-line a,
+.privacy-basic-info a {
+    color: var(--accent-dark);
+    text-decoration: underline;
+    text-underline-offset: 0.16em;
+}
+
+.privacy-basic-info {
+    margin: 0;
+    padding: 0 0.2rem;
+    color: var(--muted);
+    font-size: 0.88rem;
+    line-height: 1.6;
 }
 
 .button.is-loading {

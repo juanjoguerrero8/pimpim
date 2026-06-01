@@ -36,6 +36,10 @@
         }
     };
 
+    document.querySelectorAll("[data-dynamic-redirect]").forEach((input) => {
+        input.value = new URL("gracias.html", window.location.href).href;
+    });
+
     document.addEventListener("click", (event) => {
         const trackedElement = event.target.closest("[data-track]");
 

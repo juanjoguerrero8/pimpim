@@ -11,6 +11,7 @@ Sitio estático preparado para Cloudflare Pages. La web usa la información del 
 - `plataforma-360.html`: página de plataforma 360.
 - `bodas.html`: página específica para bodas y personalización.
 - `madrid.html`: landing local para búsquedas y campañas en Madrid.
+- `corredor-henares-guadalajara.html`: landing local para Corredor del Henares, A-2 y Guadalajara.
 - `opiniones.html`: página de eventos/trabajos y enlaces sociales.
 - `gracias.html`: destino de confirmación del formulario.
 - `privacidad.html`: estructura legal provisional.
