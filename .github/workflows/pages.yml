@@ -1,4 +1,4 @@
-name: Deploy to GitHub Pages
+name: Publish GitHub Pages
 
 on:
   push:
@@ -7,20 +7,20 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+  group: github-pages
+  cancel-in-progress: true
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout main
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -34,29 +34,24 @@ jobs:
       - name: Build CSS
         run: npm run build:css
 
-      - name: Prepare static artifact
+      - name: Prepare static site
         run: |
+          rm -rf _site
           mkdir -p _site
           cp *.html _site/
           cp styles.min.css script.js favicon.ico robots.txt sitemap.xml _site/
           cp -R assets _site/assets
           touch _site/.nojekyll
 
-      - name: Configure Pages
-        uses: actions/configure-pages@v5
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Publish to gh-pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin gh-pages
+          git worktree add _gh_pages origin/gh-pages
+          find _gh_pages -mindepth 1 -maxdepth 1 ! -name .git -exec rm -rf {} +
+          cp -R _site/. _gh_pages/
+          cd _gh_pages
+          git add -A
+          git commit -m "Publish site from ${GITHUB_SHA}" || exit 0
+          git push origin HEAD:gh-pages

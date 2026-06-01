@@ -98,6 +98,7 @@ Cuando exista `window.dataLayer`, `script.js` enviará esos eventos ahí sin cam
 ## Preview en GitHub Pages
 
 El workflow `.github/workflows/pages.yml` publica una versión estática rápida para revisión interna cada vez que se sube `main`.
+El sitio público se sirve desde la rama `gh-pages`, carpeta `/ (root)`.
 
 URL esperada:
 
