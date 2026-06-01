@@ -395,6 +395,55 @@ p {
     font-weight: 700;
 }
 
+.section-areas {
+    background: #fffaf6;
+}
+
+.area-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.area-card {
+    min-width: 0;
+    padding: 1.35rem;
+    border: 1px solid rgba(33, 31, 29, 0.1);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.area-card p {
+    margin-bottom: 1rem;
+}
+
+.city-link-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    margin-top: 1.2rem;
+}
+
+.city-chip {
+    display: inline-flex;
+    align-items: center;
+    min-height: 2.5rem;
+    padding: 0.58rem 0.8rem;
+    border: 1px solid rgba(33, 31, 29, 0.12);
+    border-radius: 999px;
+    background: #fff;
+    color: var(--ink);
+    font-weight: 800;
+    box-shadow: 0 8px 18px rgba(33, 31, 29, 0.06);
+}
+
+.city-chip:hover {
+    color: var(--accent-dark);
+    transform: translateY(-1px);
+}
+
 .section {
     padding: 5.5rem 0;
 }
@@ -1169,6 +1218,7 @@ p {
     .pricing-grid,
     .feature-grid,
     .trust-grid,
+    .area-grid,
     .gallery-grid {
         grid-template-columns: 1fr;
     }

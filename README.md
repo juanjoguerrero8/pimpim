@@ -11,7 +11,8 @@ Sitio estático preparado para Cloudflare Pages. La web usa la información del 
 - `plataforma-360.html`: página de plataforma 360.
 - `bodas.html`: página específica para bodas y personalización.
 - `madrid.html`: landing local para búsquedas y campañas en Madrid.
-- `corredor-henares-guadalajara.html`: landing local para Corredor del Henares, A-2 y Guadalajara.
+- `guadalajara.html`: landing local para búsquedas y campañas en Guadalajara y provincia.
+- `alcala-de-henares.html`, `torrejon-de-ardoz.html`, `meco.html`, `azuqueca-de-henares.html` y otras páginas locales: landings por municipio.
 - `opiniones.html`: página de eventos/trabajos y enlaces sociales.
 - `gracias.html`: destino de confirmación del formulario.
 - `privacidad.html`: estructura legal provisional.
@@ -71,10 +72,9 @@ Extras destacados:
 
 ## Pendiente antes de producción
 
-1. Sustituir `REEMPLAZA_AQUI_TU_ACCESS_KEY_DE_WEB3FORMS` por la clave pública real de Web3Forms.
-2. Confirmar si el dominio final será exactamente `https://www.pimpimfotomatones.com/`.
-3. Completar `privacidad.html` con responsable legal, NIF/CIF, email legal, base jurídica, plazo de conservación y encargados de tratamiento.
-4. Revisar si se añaden más trabajos reales, reseñas o vídeos desde redes antes de publicar.
+1. Confirmar si el dominio final será exactamente `https://www.pimpimfotomatones.com/`.
+2. Completar `privacidad.html` con responsable legal, NIF/CIF, email legal y encargados de tratamiento definitivos.
+3. Revisar si se añaden más trabajos reales, reseñas o vídeos desde redes antes de publicar.
 
 ## Tracking preparado
 

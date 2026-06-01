@@ -210,7 +210,7 @@ Use the dossier `C:\Users\jjguerrero\Downloads\Pimpim2026.pdf` as the source of 
 
 ## Current Implementation Notes
 
-- The form currently uses Web3Forms and needs a real public access key before production.
+- The form currently uses Web3Forms with a public access key configured; verify the Web3Forms account, allowed domain, and email delivery before production.
 - Preserve static deploy compatibility with Cloudflare Pages unless requirements change.
 - If adding JavaScript, keep it lightweight and progressive.
 - If adding tracking or cookies, include privacy/legal implications before implementation.

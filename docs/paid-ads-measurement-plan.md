@@ -26,7 +26,8 @@ Documento operativo para preparar campañas sin activar todavía etiquetas exter
 - `/plataforma-360.html`: intención "plataforma 360".
 - `/bodas.html`: intención "fotomatón para bodas".
 - `/madrid.html`: intención local "fotomatón Madrid", "plataforma 360 Madrid" y eventos en Madrid.
-- `/corredor-henares-guadalajara.html`: intención local para Corredor del Henares, A-2 y Guadalajara.
+- `/guadalajara.html`: intención local "fotomatón Guadalajara", "plataforma 360 Guadalajara" y eventos en Guadalajara.
+- Páginas por municipio: Alcalá de Henares, Torrejón de Ardoz, Coslada, San Fernando de Henares, Meco, Mejorada del Campo, Villalbilla, Paracuellos del Jarama, Azuqueca de Henares, Alovera, Cabanillas del Campo, Marchamalo y Villanueva de la Torre.
 
 ## Grupos iniciales de Google Ads Search
 
@@ -36,7 +37,7 @@ Documento operativo para preparar campañas sin activar todavía etiquetas exter
 - Videomatón: `videomatón boda`, `videomensajes boda`, `fotomatón con vídeo`.
 - Packs: `fotomatón 360 boda`, `fotomatón y plataforma 360`.
 - Local Madrid: `fotomatón Madrid`, `fotomatón para eventos Madrid`, `plataforma 360 Madrid`, `fotomatón bodas Madrid`.
-- Local Corredor/Guadalajara: `fotomatón Alcalá de Henares`, `fotomatón Torrejón de Ardoz`, `fotomatón Azuqueca de Henares`, `fotomatón Guadalajara`, `plataforma 360 Guadalajara`.
+- Local Guadalajara y municipios: `fotomatón Guadalajara`, `fotomatón Alcalá de Henares`, `fotomatón Torrejón de Ardoz`, `fotomatón Azuqueca de Henares`, `fotomatón Cabanillas del Campo`, `plataforma 360 Guadalajara`.
 
 ## Negativas iniciales
 
@@ -60,7 +61,7 @@ Documento operativo para preparar campañas sin activar todavía etiquetas exter
 
 ## Antes de activar campañas
 
-- Completar Web3Forms.
+- Verificar Web3Forms con la cuenta definitiva.
 - Confirmar dominio final.
 - Revisar privacidad y consentimiento.
 - Instalar GA4/Google Ads/Meta solo con decisión de cookies/consent mode.
