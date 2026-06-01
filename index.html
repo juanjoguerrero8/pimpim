@@ -96,6 +96,7 @@
                 <a href="#extras">Extras</a>
                 <a href="opiniones.html">Eventos</a>
                 <a href="madrid.html">Madrid</a>
+                <a href="corredor-henares-guadalajara.html">Corredor Henares</a>
                 <a class="nav-cta" href="#presupuesto">Presupuesto</a>
             </nav>
         </div>
@@ -348,40 +349,55 @@
                     </div>
                 </div>
 
-                <form class="budget-form reveal reveal-delay" action="https://api.web3forms.com/submit" method="POST" data-track-form="budget_request" aria-describedby="budget-form-status budget-form-note">
+                <form class="budget-form budget-form-stacked reveal reveal-delay" action="https://api.web3forms.com/submit" method="POST" data-track-form="budget_request" aria-describedby="budget-form-status budget-form-note privacy-basic-info">
                     <input type="hidden" name="access_key" value="REEMPLAZA_AQUI_TU_ACCESS_KEY_DE_WEB3FORMS">
                     <input type="hidden" name="subject" value="Nuevo presupuesto desde pimpimfotomatones.com">
                     <input type="hidden" name="from_name" value="Pimpim Fotomatones Web">
-                    <input type="hidden" name="redirect" value="https://www.pimpimfotomatones.com/gracias.html">
+                    <input type="hidden" name="redirect" value="https://www.pimpimfotomatones.com/gracias.html" data-dynamic-redirect>
                     <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" aria-label="No rellenar este campo">
 
-                    <label>
-                        Nombre
-                        <input type="text" name="name" placeholder="Tu nombre" autocomplete="name" required>
+                    <div class="form-card form-card-title full-span">
+                        <h3>Datos de contacto</h3>
+                        <p>Déjanos tus datos básicos y el municipio del evento. Te responderemos con una propuesta ajustada por WhatsApp, teléfono o correo.</p>
+                    </div>
+
+                    <label class="form-question-card full-span">
+                        <span>Nombre y apellidos <span class="required-mark" aria-hidden="true">*</span></span>
+                        <input type="text" name="name" placeholder="Texto de respuesta corta" autocomplete="name" required>
                     </label>
 
-                    <label>
-                        Email
-                        <input type="email" name="email" placeholder="tu@email.com" autocomplete="email" required>
+                    <label class="form-question-card full-span">
+                        <span>Número de teléfono <span class="required-mark" aria-hidden="true">*</span></span>
+                        <input type="tel" name="phone" placeholder="Texto de respuesta corta" autocomplete="tel" required>
                     </label>
 
-                    <label>
-                        Teléfono
-                        <input type="tel" name="phone" placeholder="+34..." autocomplete="tel">
+                    <label class="form-question-card full-span">
+                        <span>Correo electrónico <span class="required-mark" aria-hidden="true">*</span></span>
+                        <input type="email" name="email" placeholder="Texto de respuesta corta" autocomplete="email" required>
                     </label>
 
-                    <label>
-                        Fecha estimada
+                    <label class="form-question-card full-span">
+                        <span>Ciudad o municipio <span class="required-mark" aria-hidden="true">*</span></span>
+                        <input type="text" name="event_location" placeholder="Texto de respuesta larga" autocomplete="address-level2" required>
+                    </label>
+
+                    <label class="form-question-card full-span">
+                        <span>Comentarios</span>
+                        <textarea name="message" rows="4" placeholder="Texto de respuesta larga"></textarea>
+                    </label>
+
+                    <div class="form-card form-card-title full-span">
+                        <h3>Datos del evento</h3>
+                        <p>Si ya lo tienes claro, añade fecha, servicio y duración. Si no, déjalo aproximado y te orientamos.</p>
+                    </div>
+
+                    <label class="form-question-card">
+                        <span>Fecha estimada</span>
                         <input type="date" name="event_date">
                     </label>
 
-                    <label>
-                        Lugar del evento
-                        <input type="text" name="event_location" placeholder="Finca, salón, ciudad...">
-                    </label>
-
-                    <label>
-                        Servicio
+                    <label class="form-question-card">
+                        <span>Servicio que te interesa <span class="required-mark" aria-hidden="true">*</span></span>
                         <select name="service_interest" required>
                             <option value="">Selecciona un servicio</option>
                             <option>Fotomatón</option>
@@ -394,9 +410,9 @@
                         </select>
                     </label>
 
-                    <label>
-                        Horas
-                        <select name="service_hours" required>
+                    <label class="form-question-card">
+                        <span>Horas</span>
+                        <select name="service_hours">
                             <option value="">Selecciona duración</option>
                             <option>2 horas</option>
                             <option>3 horas</option>
@@ -405,15 +421,22 @@
                         </select>
                     </label>
 
-                    <label>
-                        Invitados aproximados
+                    <label class="form-question-card">
+                        <span>Invitados aproximados</span>
                         <input type="number" name="guest_count" min="1" inputmode="numeric" placeholder="Ej. 120">
                     </label>
 
-                    <label class="full-span">
-                        Cuéntanos un poco más
-                        <textarea name="message" rows="5" placeholder="Tipo de evento, extras que te interesan, horario o cualquier detalle importante." required></textarea>
-                    </label>
+                    <div class="form-question-card form-policy-card full-span">
+                        <p class="form-field-label">Política de privacidad <span class="required-mark" aria-hidden="true">*</span></p>
+                        <label class="checkbox-line">
+                            <input type="checkbox" name="privacy_policy_accepted" value="Sí" required>
+                            <span>He leído y acepto la <a href="privacidad.html" target="_blank" rel="noopener">política de privacidad</a>.</span>
+                        </label>
+                    </div>
+
+                    <p class="privacy-basic-info full-span" id="privacy-basic-info">
+                        Información básica: Pimpim Fotomatones tratará los datos para responder tu solicitud de presupuesto y gestionar disponibilidad. La base es la aplicación de medidas precontractuales solicitadas por ti. Puedes ejercer tus derechos de protección de datos a través de los canales indicados en la política de privacidad.
+                    </p>
 
                     <p class="form-status" id="budget-form-status" aria-live="polite"></p>
                     <button class="button button-primary" type="submit" data-track="form_button_click" data-track-label="budget_form">Solicitar presupuesto</button>
@@ -435,6 +458,7 @@
                 <a href="fotomaton-espejo.html">Espejo</a>
                 <a href="plataforma-360.html">360</a>
                 <a href="madrid.html">Madrid</a>
+                <a href="corredor-henares-guadalajara.html">Corredor Henares</a>
                 <a href="opiniones.html">Eventos</a>
                 <a href="privacidad.html">Privacidad</a>
             </div>
@@ -445,6 +469,6 @@
         WhatsApp
     </a>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260601-form"></script>
 </body>
 </html>
