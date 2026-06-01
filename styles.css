@@ -1042,6 +1042,50 @@ p {
     font-size: 0.9rem;
 }
 
+.bodas-widget-card {
+    margin-top: 2rem;
+    padding: 1.35rem;
+    border: 1px solid rgba(33, 31, 29, 0.1);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+#wp-widget-reviews {
+    min-height: 120px;
+}
+
+#wp-widget-preview {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    min-height: 120px;
+    padding: 1rem;
+    border: 1px dashed rgba(33, 31, 29, 0.18);
+    border-radius: var(--radius);
+    color: var(--muted);
+    text-align: center;
+    font-weight: 800;
+}
+
+#wp-widget-preview img {
+    display: block;
+    width: auto;
+    height: 20px;
+}
+
+.bodas-widget-actions {
+    margin-top: 1rem;
+}
+
+.third-party-note {
+    margin: 1rem 0 0;
+    color: var(--muted);
+    font-size: 0.88rem;
+}
+
 .stars {
     margin: 0.65rem 0 1rem;
     color: #d79a10;

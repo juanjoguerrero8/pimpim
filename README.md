@@ -13,7 +13,7 @@ Sitio estático preparado para Cloudflare Pages. La web usa la información del 
 - `madrid.html`: landing local para búsquedas y campañas en Madrid.
 - `guadalajara.html`: landing local para búsquedas y campañas en Guadalajara y provincia.
 - `alcala-de-henares.html`, `torrejon-de-ardoz.html`, `meco.html`, `azuqueca-de-henares.html` y otras páginas locales: landings por municipio.
-- `opiniones.html`: página de eventos/trabajos y enlaces sociales.
+- `opiniones.html`: página de opiniones con widget de Bodas.net, eventos/trabajos y enlaces sociales.
 - `gracias.html`: destino de confirmación del formulario.
 - `privacidad.html`: estructura legal provisional.
 - `styles.css`: sistema visual responsive.
