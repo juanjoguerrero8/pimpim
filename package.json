@@ -1,0 +1,22 @@
+{
+  "name": "pimpim-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Static website for Pimpim Fotomatones.",
+  "scripts": {
+    "serve": "python -m http.server 4173 --bind 127.0.0.1",
+    "build:css": "cleancss -O2 -o styles.min.css styles.css",
+    "validate:site": "node scripts/validate-site.js",
+    "validate:html": "html-validate *.html",
+    "audit:lighthouse": "npm run build:css && node scripts/run-lighthouse.js",
+    "audit": "npm run build:css && npm run validate:site && npm run validate:html"
+  },
+  "devDependencies": {
+    "@fontsource-variable/fraunces": "^5.2.9",
+    "@fontsource-variable/manrope": "^5.2.8",
+    "clean-css-cli": "^5.6.3",
+    "fast-xml-parser": "^5.8.0",
+    "html-validate": "^11.5.0",
+    "lighthouse": "^13.3.0"
+  }
+}
