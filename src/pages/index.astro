@@ -57,7 +57,7 @@ const jsonLdFaq = JSON.stringify({
 
     <!-- ── HERO V3.0 ─────────────────────────────────────────────────── -->
     <section class="hero-v3" aria-label="Presentación">
-      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-bg" aria-hidden="true" style={`background-image: url('${import.meta.env.BASE_URL}assets/img/pimpim-invitados-atrezzo.webp')`}></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="wrap hero-grid">
         <div class="hero-copy">
@@ -499,7 +499,6 @@ const jsonLdFaq = JSON.stringify({
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('/assets/img/pimpim-invitados-atrezzo.webp');
     background-size: cover;
     background-position: center 35%;
     transform-origin: center center;
