@@ -1646,6 +1646,32 @@ p {
     outline-color: var(--accent) !important;
 }
 
+/* Location tag links */
+.location-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.location-tags a {
+    display: inline-block;
+    padding: 0.35rem 0.85rem;
+    border: 1px solid var(--border);
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.location-tags a:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto;
