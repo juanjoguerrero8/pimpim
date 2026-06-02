@@ -21,6 +21,26 @@
         <priority>0.85</priority>
     </url>
     <url>
+        <loc>https://www.pimpimfotomatones.com/photocall.html</loc>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.pimpimfotomatones.com/fondos.html</loc>
+        <priority>0.75</priority>
+    </url>
+    <url>
+        <loc>https://www.pimpimfotomatones.com/sofa-chester.html</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.pimpimfotomatones.com/neones.html</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.pimpimfotomatones.com/telefono-videomensajes.html</loc>
+        <priority>0.7</priority>
+    </url>
+    <url>
         <loc>https://www.pimpimfotomatones.com/bodas.html</loc>
         <priority>0.8</priority>
     </url>
@@ -91,5 +111,9 @@
     <url>
         <loc>https://www.pimpimfotomatones.com/opiniones.html</loc>
         <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://www.pimpimfotomatones.com/eventos.html</loc>
+        <priority>0.75</priority>
     </url>
 </urlset>
