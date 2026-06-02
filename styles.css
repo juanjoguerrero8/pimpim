@@ -1646,6 +1646,15 @@ p {
     outline-color: var(--accent) !important;
 }
 
+/* Form trust signal */
+.form-trust-signal {
+    font-size: 0.8rem;
+    color: var(--text-muted, #888);
+    text-align: center;
+    margin: 0;
+    letter-spacing: 0.01em;
+}
+
 /* Location tag links */
 .location-tags {
     display: flex;
