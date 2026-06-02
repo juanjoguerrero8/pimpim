@@ -100,12 +100,133 @@
         });
     });
 
+    const attributionStorageKey = "pimpim_attribution_v1";
+    const attributionParamNames = [
+        "utm_source",
+        "utm_medium",
+        "utm_campaign",
+        "utm_content",
+        "utm_term",
+        "gclid",
+        "gbraid",
+        "wbraid",
+        "fbclid",
+        "li_fat_id",
+        "twclid",
+        "rdt_cid"
+    ];
+
+    const readStoredAttribution = () => {
+        try {
+            return JSON.parse(window.sessionStorage.getItem(attributionStorageKey) || "{}");
+        } catch (error) {
+            return {};
+        }
+    };
+
+    const writeStoredAttribution = (attribution) => {
+        try {
+            window.sessionStorage.setItem(attributionStorageKey, JSON.stringify(attribution));
+        } catch (error) {
+            // Attribution is useful for ads diagnostics, but never required for the page to work.
+        }
+    };
+
+    const getAttributionFromUrl = () => {
+        const params = new URLSearchParams(window.location.search);
+        const values = {};
+
+        attributionParamNames.forEach((name) => {
+            const value = params.get(name);
+
+            if (value) {
+                values[name] = value;
+            }
+        });
+
+        return values;
+    };
+
+    const summarizeAttribution = (attribution) => {
+        if (attribution.utm_source) {
+            return [attribution.utm_source, attribution.utm_campaign].filter(Boolean).join(" / ");
+        }
+
+        if (attribution.gclid || attribution.gbraid || attribution.wbraid) {
+            return "google_ads_click";
+        }
+
+        if (attribution.fbclid) {
+            return "meta_ads_click";
+        }
+
+        if (attribution.li_fat_id) {
+            return "linkedin_ads_click";
+        }
+
+        if (attribution.twclid) {
+            return "x_ads_click";
+        }
+
+        if (attribution.rdt_cid) {
+            return "reddit_ads_click";
+        }
+
+        return attribution.referrer ? "referral" : "";
+    };
+
+    const hasCampaignAttribution = (attribution) => {
+        return attributionParamNames.some((name) => Boolean(attribution[name]));
+    };
+
+    const currentUrl = window.location.href;
+    const storedAttribution = readStoredAttribution();
+    const urlAttribution = getAttributionFromUrl();
+    const attribution = {
+        ...storedAttribution,
+        landing_page: storedAttribution.landing_page || currentUrl,
+        referrer: storedAttribution.referrer || document.referrer || "",
+        captured_at: storedAttribution.captured_at || new Date().toISOString(),
+        ...urlAttribution,
+        current_page: currentUrl
+    };
+
+    attribution.source_summary = summarizeAttribution(attribution);
+    writeStoredAttribution(attribution);
+
+    document.querySelectorAll("[data-attribution-field]").forEach((input) => {
+        input.value = attribution[input.dataset.attributionField] || "";
+    });
+
+    const appendWhatsAppAttribution = (href) => {
+        if (!attribution.source_summary || !hasCampaignAttribution(attribution)) {
+            return href;
+        }
+
+        const url = new URL(href);
+        const message = url.searchParams.get("text") || "";
+
+        if (!message || message.includes("Origen web:")) {
+            return href;
+        }
+
+        url.searchParams.set("text", `${message}\n\nOrigen web: ${attribution.source_summary}`);
+        return url.toString();
+    };
+
+    document.querySelectorAll('a[href*="wa.me/34684768462"]').forEach((link) => {
+        link.href = appendWhatsAppAttribution(link.href);
+    });
+
     const emitTrackingEvent = (name, payload) => {
         const detail = {
             event: name,
             label: payload.label || "",
             href: payload.href || "",
             path: window.location.pathname,
+            attribution_source: attribution.source_summary,
+            utm_source: attribution.utm_source || "",
+            utm_campaign: attribution.utm_campaign || "",
             timestamp: new Date().toISOString()
         };
 
