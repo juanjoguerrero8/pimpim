@@ -9,12 +9,14 @@ Sitio estático preparado para Cloudflare Pages. La web usa la información del 
 - `videomaton.html`: página de videomatón.
 - `fotomaton-espejo.html`: página de fotomatón espejo.
 - `plataforma-360.html`: página de plataforma 360.
+- `photocall.html`, `fondos.html`, `sofa-chester.html`, `neones.html`, `telefono-videomensajes.html`: páginas específicas para extras.
 - `bodas.html`: página específica para bodas y personalización.
 - `quienes-somos.html`: página de marca, equipo y cobertura en Madrid/Guadalajara.
+- `eventos.html`: página de eventos y trabajos, preparada para futuras fotos y vídeos reales.
 - `madrid.html`: landing local para búsquedas y campañas en Madrid.
 - `guadalajara.html`: landing local para búsquedas y campañas en Guadalajara y provincia.
 - `alcala-de-henares.html`, `torrejon-de-ardoz.html`, `meco.html`, `azuqueca-de-henares.html` y otras páginas locales: landings por municipio.
-- `opiniones.html`: página de opiniones con widget de Bodas.net, eventos/trabajos y enlaces sociales.
+- `opiniones.html`: página de opiniones con widget de Bodas.net.
 - `gracias.html`: destino de confirmación del formulario.
 - `privacidad.html`: estructura legal provisional.
 - `styles.css`: sistema visual responsive.
