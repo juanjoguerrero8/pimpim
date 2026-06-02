@@ -1,0 +1,21 @@
+---
+interface Props {
+  label?: string;
+  trackLabel?: string;
+}
+const {
+  label = 'WhatsApp',
+  trackLabel = 'floating',
+} = Astro.props;
+---
+<a
+  class="floating-whatsapp"
+  href={`https://wa.me/34684768462?text=Hola%20Pimpim%2C%20quiero%20pedir%20presupuesto.`}
+  target="_blank"
+  rel="noreferrer"
+  aria-label="Pedir presupuesto por WhatsApp"
+  data-track="whatsapp_click"
+  data-track-label={trackLabel}
+>
+  {label}
+</a>

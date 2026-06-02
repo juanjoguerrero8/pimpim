@@ -1,0 +1,658 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const jsonLdBusiness = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Pimpim Fotomatones",
+  "url": "https://www.pimpimfotomatones.com/",
+  "image": "https://www.pimpimfotomatones.com/assets/img/pimpim-montaje-evento.webp",
+  "telephone": "+34684768462",
+  "description": "Fotomatón, videomatón, fotomatón espejo, plataforma 360 y extras para bodas y eventos.",
+  "areaServed": [
+    { "@type": "AdministrativeArea", "name": "Madrid" },
+    { "@type": "Country", "name": "España" }
+  ],
+  "priceRange": "Desde 350 EUR sin IVA",
+  "sameAs": [
+    "https://www.instagram.com/pimpimfotomatones/",
+    "https://www.tiktok.com/@pimpim.fotomatones"
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "price": "350", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Fotomatón 2 horas" } },
+    { "@type": "Offer", "price": "430", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Fotomatón 3 horas" } },
+    { "@type": "Offer", "price": "400", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Videomatón 2 horas" } },
+    { "@type": "Offer", "price": "475", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Videomatón 3 horas" } },
+    { "@type": "Offer", "price": "500", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Fotomatón espejo 2 horas" } },
+    { "@type": "Offer", "price": "575", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Fotomatón espejo 3 horas" } },
+    { "@type": "Offer", "price": "400", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Plataforma 360 2 horas" } },
+    { "@type": "Offer", "price": "475", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Plataforma 360 3 horas" } },
+    { "@type": "Offer", "price": "700", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Fotomatón + Plataforma 360 2 horas" } },
+    { "@type": "Offer", "price": "750", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Fotomatón + Plataforma 360 3 horas" } },
+    { "@type": "Offer", "price": "800", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Fotomatón espejo + Plataforma 360 2 horas" } },
+    { "@type": "Offer", "price": "850", "priceCurrency": "EUR", "itemOffered": { "@type": "Service", "name": "Fotomatón espejo + Plataforma 360 3 horas" } }
+  ]
+});
+
+const jsonLdFaq = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "¿Los importes desde incluyen IVA?", "acceptedAnswer": { "@type": "Answer", "text": "No. Los importes orientativos se muestran sin IVA." } },
+    { "@type": "Question", "name": "¿El presupuesto puede cambiar por distancia?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. El presupuesto final depende de distancia, municipio, horas y logística del evento." } },
+    { "@type": "Question", "name": "¿Qué incluyen los servicios principales?", "acceptedAnswer": { "@type": "Answer", "text": "Incluyen personal Pimpim, atrezzo variado, plantilla y logo personalizados, álbum digital, USB personalizado con todo el contenido y álbum físico de firmas en fotomatón, videomatón y espejo." } },
+    { "@type": "Question", "name": "¿Con cuánta antelación hay que pedir un fondo personalizado?", "acceptedAnswer": { "@type": "Answer", "text": "Los fondos personalizados requieren al menos 4 semanas de antelación." } }
+  ]
+});
+---
+
+<Layout
+  title="Pimpim Fotomatones | Fotomatón, videomatón y plataforma 360"
+  description="Pimpim Fotomatones: fotomatón, videomatón, fotomatón espejo, plataforma 360 y extras para bodas y eventos. Empresa madrileña, joven y profesional."
+  canonical="https://www.pimpimfotomatones.com/"
+  preloadImage="/assets/img/pimpim-invitados-atrezzo.webp"
+  jsonLd={[jsonLdBusiness, jsonLdFaq]}
+>
+  <main id="inicio">
+
+    <!-- ── HERO V3.0 ─────────────────────────────────────────────────── -->
+    <section class="hero-v3" aria-label="Presentación">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow js-hero-eyebrow">Madrileños que crean momentos</p>
+          <h1 class="js-hero-h1">Lo fácil nunca fue lo divertido.</h1>
+          <p class="hero-text js-hero-text">
+            Fotomatón, espejo, videomatón y plataforma 360 para bodas y eventos en Madrid y Guadalajara.
+            Fotos ilimitadas, álbum físico y recuerdos que duran — todo personalizado con el logo de vuestro evento.
+          </p>
+          <div class="hero-actions js-hero-actions">
+            <a class="button button-primary" href="#presupuesto" data-track="service_page_click" data-track-label="hero_cta">Pedir presupuesto</a>
+            <a class="button button-secondary hero-btn-ghost" href="#servicios" data-track="service_page_click" data-track-label="hero">Ver servicios</a>
+          </div>
+          <ul class="hero-points js-hero-points">
+            <li>Fotomatón, videomatón, fotomatón espejo y plataforma 360.</li>
+            <li>Plantillas, logo, atrezzo y detalles personalizados.</li>
+            <li>Álbum físico, USB y archivos digitales incluidos en servicios principales.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="hero-scroll-hint js-hero-scroll" aria-hidden="true">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- ── TRUST STRIP ───────────────────────────────────────────────── -->
+    <section class="trust-strip" aria-label="Resumen de confianza">
+      <div class="wrap trust-grid">
+        <p><strong>350€</strong><span>Fotomatón 2h desde</span></p>
+        <p><strong>Full HD</strong><span>Videomensajes</span></p>
+        <p><strong>GoPro</strong><span>Plataforma 360</span></p>
+        <p><strong>&lt;24h</strong><span>Respuesta garantizada</span></p>
+      </div>
+    </section>
+
+    <!-- ── ZONAS ─────────────────────────────────────────────────────── -->
+    <section class="section section-areas" id="zonas">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Zonas de servicio</p>
+          <h2>Fotomatón para eventos en Madrid y Guadalajara.</h2>
+          <p>Trabajamos por provincias y municipios. Si tu finca, salón o empresa está cerca de estas zonas, dinos dirección y revisamos desplazamiento y disponibilidad.</p>
+        </div>
+        <div class="area-grid reveal reveal-delay">
+          <article class="area-card">
+            <h3>Madrid</h3>
+            <p>Servicio para Madrid capital, bodas, eventos de empresa y celebraciones en municipios del este de la Comunidad de Madrid.</p>
+            <a class="text-link" href="/madrid">Ver Madrid</a>
+          </article>
+          <article class="area-card">
+            <h3>Guadalajara</h3>
+            <p>Fotomatón, espejo, videomatón y 360 para Guadalajara capital, provincia y municipios cercanos al eje A-2.</p>
+            <a class="text-link" href="/guadalajara">Ver Guadalajara</a>
+          </article>
+        </div>
+        <div class="city-link-grid reveal reveal-delay-2">
+          <a class="city-chip" href="/alcala-de-henares">Alcalá de Henares</a>
+          <a class="city-chip" href="/torrejon-de-ardoz">Torrejón de Ardoz</a>
+          <a class="city-chip" href="/coslada">Coslada</a>
+          <a class="city-chip" href="/san-fernando-de-henares">San Fernando de Henares</a>
+          <a class="city-chip" href="/meco">Meco</a>
+          <a class="city-chip" href="/mejorada-del-campo">Mejorada del Campo</a>
+          <a class="city-chip" href="/villalbilla">Villalbilla</a>
+          <a class="city-chip" href="/paracuellos-del-jarama">Paracuellos del Jarama</a>
+          <a class="city-chip" href="/azuqueca-de-henares">Azuqueca de Henares</a>
+          <a class="city-chip" href="/alovera">Alovera</a>
+          <a class="city-chip" href="/cabanillas-del-campo">Cabanillas del Campo</a>
+          <a class="city-chip" href="/marchamalo">Marchamalo</a>
+          <a class="city-chip" href="/villanueva-de-la-torre">Villanueva de la Torre</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── DIFERENTES ────────────────────────────────────────────────── -->
+    <section class="section" id="diferentes">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Qué nos hace diferentes</p>
+          <h2>Nos tomamos la diversión muy en serio.</h2>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <h3>Equipo joven y profesional</h3>
+            <p>Somos la energía que tu fiesta necesita: puntuales, resolutivos y con ganas de que cada invitado participe.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay">
+            <h3>Personalización</h3>
+            <p>Adaptamos diseño de foto, logo, atrezzo, plantilla y neones para que el evento tenga sello propio.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay-2">
+            <h3>Innovación</h3>
+            <p>Usamos fotomatón espejo con pantalla táctil, GIFs, vídeos y opciones como videomatón y plataforma 360.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── SERVICIOS ──────────────────────────────────────────────────── -->
+    <section class="section section-contrast" id="servicios">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Servicios</p>
+          <h2>Elige la experiencia Pimpim para tu evento.</h2>
+          <p>Los servicios principales comparten una base clara: personal Pimpim, atrezzo, diseño personalizado y entrega digital del contenido. Luego eliges si quieres foto, vídeo, espejo, 360 o un pack combinado.</p>
+        </div>
+        <div class="cards-grid">
+          <article class="service-card reveal">
+            <span class="card-tag">Desde 350€</span>
+            <h3>Fotomatón</h3>
+            <p>Fotomatón táctil, elegante y moderno. Fotos ilimitadas para inmortalizar el momento.</p>
+            <a class="text-link" href="/fotomaton" data-track="service_page_click" data-track-label="fotomaton">Ver fotomatón</a>
+          </article>
+          <article class="service-card reveal reveal-delay">
+            <span class="card-tag">Desde 400€</span>
+            <h3>Videomatón</h3>
+            <p>Foto + vídeo: videomensajes HD, making of exclusivo y opción de convertirlo en confesionario o retos.</p>
+            <a class="text-link" href="/videomaton" data-track="service_page_click" data-track-label="videomaton">Ver videomatón</a>
+          </article>
+          <article class="service-card reveal reveal-delay-2">
+            <span class="card-tag">Desde 500€</span>
+            <h3>Fotomatón espejo</h3>
+            <p>Pantalla táctil, diseño elegante y cámara detrás del espejo para verse en tiempo real mientras se posa.</p>
+            <a class="text-link" href="/fotomaton-espejo" data-track="service_page_click" data-track-label="fotomaton-espejo">Ver espejo</a>
+          </article>
+          <article class="service-card reveal">
+            <span class="card-tag">Desde 400€</span>
+            <h3>Plataforma 360</h3>
+            <p>Vídeos con GoPro al instante para ver, descargar y compartir durante el evento.</p>
+            <a class="text-link" href="/plataforma-360" data-track="service_page_click" data-track-label="plataforma-360">Ver 360</a>
+          </article>
+        </div>
+        <div class="feature-grid included-grid">
+          <article class="feature-card reveal">
+            <span class="card-tag">Incluido</span>
+            <h3>Personal y animación</h3>
+            <p>Nos encargamos del montaje, acompañamos a los invitados y mantenemos la experiencia activa para que la gente participe.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay">
+            <span class="card-tag">Incluido</span>
+            <h3>Atrezzo y diseño</h3>
+            <p>Atrezzo divertido y variado, plantillas personalizadas y logo del evento integrado en las fotos o piezas finales.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay-2">
+            <span class="card-tag">Incluido</span>
+            <h3>Recuerdos entregables</h3>
+            <p>Álbum digital, USB personalizado con todo el contenido y álbum físico de firmas en fotomatón, videomatón y espejo.</p>
+          </article>
+        </div>
+        <p class="section-footnote reveal">La plataforma 360 entrega el contenido en vídeo y no incluye álbum físico de firmas salvo que se combine con fotomatón o espejo.</p>
+      </div>
+    </section>
+
+    <!-- ── GALERÍA ────────────────────────────────────────────────────── -->
+    <section class="section section-gallery" id="galeria">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Eventos</p>
+          <h2>Un vistazo a la experiencia Pimpim.</h2>
+          <p>Fotomatón, atrezzo, photocall, neones y recuerdos preparados para que los invitados se atrevan, conecten y sonrían.</p>
+          <a class="text-link" href="/eventos" data-track="service_page_click" data-track-label="events_home">Ver eventos</a>
+        </div>
+        <div class="gallery-grid reveal reveal-delay">
+          <article class="gallery-card gallery-card-photo">
+            <img src="/assets/img/pimpim-montaje-evento.webp" alt="Montaje de fotomatón Pimpim con atrezzo en un evento" loading="lazy">
+            <div><span>Fotomatón</span><strong>Atrezzo y fotos ilimitadas</strong></div>
+          </article>
+          <article class="gallery-card">
+            <img src="/assets/img/pimpim-plataforma-360.webp" alt="Plataforma 360 de Pimpim preparada para grabar vídeos" loading="lazy">
+            <div><span>360</span><strong>Vídeos al instante</strong></div>
+          </article>
+          <article class="gallery-card">
+            <img src="/assets/img/pimpim-invitados-atrezzo.webp" alt="Invitados posando con atrezzo de Pimpim Fotomatones" loading="lazy">
+            <div><span>Diversión</span><strong>Invitados atrevidos</strong></div>
+          </article>
+          <article class="gallery-card">
+            <img src="/assets/img/pimpim-equipo.webp" alt="Equipo de Pimpim Fotomatones junto a su material de eventos" loading="lazy">
+            <div><span>Equipo</span><strong>Jóvenes y resolutivos</strong></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── EXTRAS ─────────────────────────────────────────────────────── -->
+    <section class="section section-contrast" id="extras">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Extras</p>
+          <h2>Complementos para crear un escenario propio.</h2>
+          <p>Los extras se añaden al servicio principal cuando quieres reforzar el photocall, el ambiente o el recuerdo final del evento.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="pricing-card reveal">
+            <h3>Photocall</h3>
+            <p>Jardín vertical, muro floral, estructura floral y montaje visual para crear una zona de fotos con presencia.</p>
+            <a class="text-link" href="/photocall" data-track="service_page_click" data-track-label="photocall">Ver photocall</a>
+          </article>
+          <article class="pricing-card reveal reveal-delay">
+            <h3>Fondos</h3>
+            <p>Fondos disponibles para photocall y opción de pedir fondos 100% personalizados bajo presupuesto.</p>
+            <a class="text-link" href="/fondos" data-track="service_page_click" data-track-label="fondos">Ver fondos</a>
+          </article>
+          <article class="pricing-card reveal reveal-delay-2">
+            <h3>Sofá Chester</h3>
+            <p>Un punto de escena para photocall, bodas y eventos con estética más cuidada.</p>
+            <a class="text-link" href="/sofa-chester" data-track="service_page_click" data-track-label="sofa_chester">Ver sofá</a>
+          </article>
+          <article class="pricing-card reveal">
+            <h3>Neones</h3>
+            <p>Neones clásicos, premium XXL y neones personalizados para dar intención al fondo.</p>
+            <a class="text-link" href="/neones" data-track="service_page_click" data-track-label="neones">Ver neones</a>
+          </article>
+          <article class="pricing-card reveal reveal-delay">
+            <h3>Teléfono de videomensajes</h3>
+            <p>El libro de firmas del siglo XXI: tus invitados descuelgan, graban su dedicatoria y recibís los clips en digital.</p>
+            <a class="text-link" href="/telefono-videomensajes" data-track="service_page_click" data-track-label="telefono_videomensajes">Ver teléfono</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── COMBOS BANNER ──────────────────────────────────────────────── -->
+    <section class="section section-combos-banner">
+      <div class="wrap">
+        <div class="combos-banner reveal">
+          <div class="combos-banner__text">
+            <p class="eyebrow">Packs combinados</p>
+            <p class="combos-banner__headline">Combina servicios y sácale más partido a tu celebración.</p>
+          </div>
+          <a class="button button-secondary" href="/combos" data-track="service_page_click" data-track-label="combos_banner">Ver combos disponibles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── PERSONALIZACIÓN ────────────────────────────────────────────── -->
+    <section class="section">
+      <div class="wrap split-layout">
+        <div class="reveal">
+          <p class="eyebrow">Personalización</p>
+          <h2>Plantillas y logos para que todo encaje.</h2>
+        </div>
+        <ol class="steps-list reveal reveal-delay">
+          <li><strong>Elige formato de plantilla.</strong><span>2, 3 o 4 fotos con el fondo que quieras y logo personalizado.</span></li>
+          <li><strong>Elige tu estilo.</strong><span>Florales, geométricos, vintage o modernos. Podemos adaptar nombres y diseño.</span></li>
+          <li><strong>Envíanos tu identidad.</strong><span>Si ya tenéis logo, invitación o tipografía, lo llevamos al formato del fotomatón.</span></li>
+          <li><strong>Añade un fondo personalizado como extra.</strong><span>Si quieres un fondo 100% exclusivo, lo diseñamos, imprimimos y montamos bajo presupuesto. Requiere al menos 4 semanas.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ── FAQ ───────────────────────────────────────────────────────── -->
+    <section class="section section-contrast" id="faq">
+      <div class="wrap faq-layout">
+        <div class="section-heading reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Dudas rápidas antes de pedir presupuesto.</h2>
+          <p>Respuestas directas para decidir servicio, horas y extras antes de escribirnos.</p>
+        </div>
+        <div class="faq-list reveal reveal-delay">
+          <details><summary>¿Los importes desde incluyen IVA?</summary><p>No. Los importes orientativos se muestran sin IVA.</p></details>
+          <details><summary>¿Puede cambiar el presupuesto por distancia?</summary><p>Sí. El presupuesto final depende de distancia, municipio, horas y logística del evento.</p></details>
+          <details><summary>¿Qué incluye el fotomatón?</summary><p>Personal Pimpim, atrezzo variado, plantilla y logo personalizados, álbum digital, USB personalizado con todo el contenido y álbum físico de firmas en fotomatón, videomatón y espejo.</p></details>
+          <details><summary>¿Qué diferencia hay entre fotomatón y videomatón?</summary><p>El videomatón añade videomensajes HD, making of exclusivo y opción de formato temático como confesionario, preguntas o retos.</p></details>
+          <details><summary>¿Con cuánta antelación hay que pedir un fondo personalizado?</summary><p>Los fondos personalizados se presupuestan según medidas y requieren al menos 4 semanas de antelación.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── OPINIONES ──────────────────────────────────────────────────── -->
+    <section class="section section-reviews" id="opiniones">
+      <div class="wrap">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Opiniones</p>
+          <h2>Lo que dicen quienes ya vivieron el momento.</h2>
+          <p>Bodas, eventos de empresa y comuniones. Cada celebración es diferente; el resultado siempre es el mismo.</p>
+        </div>
+        <div class="reviews-grid reveal reveal-delay">
+          <article class="review-card">
+            <div class="review-stars" role="img" aria-label="5 sobre 5">★★★★★</div>
+            <blockquote>"El fotomatón fue lo más comentado de la noche. Los chicos de Pimpim son súper atentos, el atrezzo era increíble y todas las fotos llegaron en el USB al día siguiente. Repetiríamos sin dudarlo."</blockquote>
+            <footer><strong>Laura M.</strong> <span>Boda en Alcalá de Henares</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" role="img" aria-label="5 sobre 5">★★★★★</div>
+            <blockquote>"Contratamos el espejo con la plataforma 360 y fue un éxito absoluto. Nuestros invitados no paraban de grabarse. La atención previa fue perfecta y el montaje llegó puntual. Muy recomendable."</blockquote>
+            <footer><strong>Carlos y Ana</strong> <span>Boda en Guadalajara</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" role="img" aria-label="5 sobre 5">★★★★★</div>
+            <blockquote>"Lo pusimos en el evento de empresa de fin de año y fue un acierto total. Profesionales, puntuales y con mucha energía. El videomatón en modo confesionario fue el momento de la noche."</blockquote>
+            <footer><strong>Marta S.</strong> <span>Evento de empresa, Madrid</span></footer>
+          </article>
+          <article class="review-card">
+            <div class="review-stars" role="img" aria-label="5 sobre 5">★★★★★</div>
+            <blockquote>"El fotomatón con el teléfono de videomensajes fue una idea genial para la comunión de nuestra hija. Los niños fliparon y los mayores también. El álbum físico es un recuerdo que guardaremos siempre."</blockquote>
+            <footer><strong>Familia Rodríguez</strong> <span>Comunión, Torrejón de Ardoz</span></footer>
+          </article>
+        </div>
+        <p class="reviews-cta reveal"><a class="text-link" href="/opiniones">Ver todas las opiniones en Bodas.net →</a></p>
+      </div>
+    </section>
+
+    <!-- ── FORMULARIO ─────────────────────────────────────────────────── -->
+    <section class="section section-form" id="presupuesto">
+      <div class="wrap form-layout">
+        <div class="reveal">
+          <p class="eyebrow">Presupuesto sin compromiso</p>
+          <h2>Cuéntanos fecha, lugar, servicio y horas.</h2>
+          <p class="form-intro">Escríbenos por WhatsApp o rellena el formulario — respondemos en menos de 24h con una propuesta personalizada para tu fecha y municipio.</p>
+          <div class="contact-card">
+            <strong>+34 684 768 462</strong>
+            <p>Instagram: @pimpimfotomatones · TikTok: @pimpim.fotomatones · LinkedIn: Pimpim Fotomatones</p>
+            <a class="text-link" href="https://wa.me/34684768462?text=Hola%20Pimpim%2C%20quiero%20pedir%20presupuesto.%20Fecha%3A%20%20Lugar%3A%20%20Servicio%3A%20%20Horas%3A%20%20Invitados%3A%20" target="_blank" rel="noreferrer" data-track="whatsapp_click" data-track-label="form_sidebar">Abrir WhatsApp</a>
+          </div>
+        </div>
+
+        <form class="budget-form budget-form-stacked reveal reveal-delay" action="https://api.web3forms.com/submit" method="POST" data-track-form="budget_request" aria-describedby="budget-form-status budget-form-note privacy-basic-info" novalidate>
+          <input type="hidden" name="access_key" value="06cafea8-327d-4d9f-913d-dc6b307a2c02">
+          <input type="hidden" name="subject" value="Nuevo presupuesto desde pimpimfotomatones.com">
+          <input type="hidden" name="from_name" value="Pimpim Fotomatones Web">
+          <input type="hidden" name="redirect" value="https://www.pimpimfotomatones.com/gracias" data-dynamic-redirect>
+          <input type="hidden" name="landing_page" data-attribution-field="landing_page">
+          <input type="hidden" name="current_page" data-attribution-field="current_page">
+          <input type="hidden" name="referrer" data-attribution-field="referrer">
+          <input type="hidden" name="source_summary" data-attribution-field="source_summary">
+          <input type="hidden" name="utm_source" data-attribution-field="utm_source">
+          <input type="hidden" name="utm_medium" data-attribution-field="utm_medium">
+          <input type="hidden" name="utm_campaign" data-attribution-field="utm_campaign">
+          <input type="hidden" name="utm_content" data-attribution-field="utm_content">
+          <input type="hidden" name="utm_term" data-attribution-field="utm_term">
+          <input type="hidden" name="gclid" data-attribution-field="gclid">
+          <input type="hidden" name="gbraid" data-attribution-field="gbraid">
+          <input type="hidden" name="wbraid" data-attribution-field="wbraid">
+          <input type="hidden" name="fbclid" data-attribution-field="fbclid">
+          <input type="hidden" name="li_fat_id" data-attribution-field="li_fat_id">
+          <input type="hidden" name="twclid" data-attribution-field="twclid">
+          <input type="hidden" name="rdt_cid" data-attribution-field="rdt_cid">
+          <input type="checkbox" name="botcheck" class="hidden-field" tabindex="-1" aria-label="No rellenar este campo">
+
+          <div class="form-card form-card-title full-span">
+            <h3>Datos de contacto</h3>
+            <p>Déjanos tus datos básicos y el municipio del evento. Te responderemos con una propuesta ajustada por WhatsApp, teléfono o correo.</p>
+          </div>
+          <label class="form-question-card full-span">
+            <span>Nombre y apellidos <span class="required-mark" aria-hidden="true">*</span></span>
+            <input type="text" name="name" placeholder="María García" autocomplete="name" required>
+            <span class="field-error" data-error-for="name" aria-live="polite" hidden></span>
+          </label>
+          <label class="form-question-card full-span">
+            <span>Número de teléfono</span>
+            <input type="tel" name="phone" placeholder="+34 612 345 678" autocomplete="tel">
+            <span class="field-error" data-error-for="phone" aria-live="polite" hidden></span>
+          </label>
+          <label class="form-question-card full-span">
+            <span>Correo electrónico <span class="required-mark" aria-hidden="true">*</span></span>
+            <input type="email" name="email" placeholder="hola@ejemplo.es" autocomplete="email" required>
+            <span class="field-error" data-error-for="email" aria-live="polite" hidden></span>
+          </label>
+          <label class="form-question-card full-span">
+            <span>Ciudad o municipio <span class="required-mark" aria-hidden="true">*</span></span>
+            <input type="text" name="event_location" placeholder="Alcalá de Henares, Madrid capital..." autocomplete="address-level2" required>
+            <span class="field-error" data-error-for="event_location" aria-live="polite" hidden></span>
+          </label>
+          <label class="form-question-card full-span">
+            <span>Comentarios</span>
+            <textarea name="message" rows="4" placeholder="Tipo de evento, invitados, preguntas..."></textarea>
+          </label>
+
+          <div class="form-card form-card-title full-span">
+            <h3>Datos del evento</h3>
+            <p>Si ya lo tienes claro, añade fecha, servicio y duración. Si no, déjalo aproximado y te orientamos.</p>
+          </div>
+          <label class="form-question-card">
+            <span>Fecha estimada</span>
+            <input type="date" name="event_date">
+          </label>
+          <label class="form-question-card">
+            <span>Servicio que te interesa <span class="required-mark" aria-hidden="true">*</span></span>
+            <select name="service_interest" required>
+              <option value="">Selecciona un servicio</option>
+              <option>Fotomatón</option>
+              <option>Videomatón</option>
+              <option>Fotomatón espejo</option>
+              <option>Plataforma 360</option>
+              <option>Fotomatón + 360</option>
+              <option>Fotomatón espejo + 360</option>
+              <option>No lo tengo claro todavía</option>
+            </select>
+            <span class="field-error" data-error-for="service_interest" aria-live="polite" hidden></span>
+          </label>
+          <label class="form-question-card">
+            <span>Horas</span>
+            <select name="service_hours">
+              <option value="">Selecciona duración</option>
+              <option>2 horas</option>
+              <option>3 horas</option>
+              <option>3 horas con extra</option>
+              <option>No lo sé todavía</option>
+            </select>
+          </label>
+          <label class="form-question-card">
+            <span>Invitados aproximados</span>
+            <input type="number" name="guest_count" min="1" inputmode="numeric" placeholder="Ej. 120">
+          </label>
+
+          <div class="form-question-card form-policy-card full-span">
+            <p class="form-field-label">Política de privacidad <span class="required-mark" aria-hidden="true">*</span></p>
+            <label class="checkbox-line">
+              <input type="checkbox" name="privacy_policy_accepted" value="Sí" required>
+              <span>He leído y acepto la <a href="/privacidad" target="_blank" rel="noopener">política de privacidad</a>.</span>
+            </label>
+            <span class="field-error" data-error-for="privacy_policy_accepted" aria-live="polite" hidden></span>
+          </div>
+          <p class="privacy-basic-info full-span" id="privacy-basic-info">
+            Información básica: Pimpim Fotomatones tratará los datos para responder tu solicitud de presupuesto y gestionar disponibilidad. La base es la aplicación de medidas precontractuales solicitadas por ti.
+          </p>
+          <p class="form-status" id="budget-form-status" aria-live="polite"></p>
+          <p class="form-trust-signal full-span">Sin compromiso · Respondemos en menos de 24h · Tus datos no se comparten</p>
+          <button class="button button-primary" type="submit" data-track="form_button_click" data-track-label="budget_form">Recibir mi presupuesto →</button>
+          <p class="form-note" id="budget-form-note">Servicios desde 350€ sin IVA. El presupuesto final depende de fecha, municipio, horas y logística del evento.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+</Layout>
+
+<!-- ── ESTILOS DEL HERO V3.0 ──────────────────────────────────────────── -->
+<style>
+  .hero-v3 {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: #111;
+    color: #fff;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/img/pimpim-invitados-atrezzo.webp');
+    background-size: cover;
+    background-position: center 35%;
+    transform-origin: center center;
+    animation: kenBurns 16s ease-out forwards;
+    will-change: transform;
+  }
+
+  @keyframes kenBurns {
+    from { transform: scale(1.08); }
+    to   { transform: scale(1.00); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      155deg,
+      rgba(0, 0, 0, 0.72) 0%,
+      rgba(0, 0, 0, 0.50) 55%,
+      rgba(0, 0, 0, 0.25) 100%
+    );
+  }
+
+  .hero-v3 .hero-grid {
+    position: relative;
+    z-index: 1;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-v3 .hero-copy {
+    max-width: 640px;
+  }
+
+  .hero-v3 .eyebrow {
+    color: rgba(255, 255, 255, 0.70);
+    letter-spacing: 0.08em;
+  }
+
+  .hero-v3 h1 {
+    color: #fff;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.1;
+    margin-bottom: 1.25rem;
+  }
+
+  .hero-v3 .hero-text {
+    color: rgba(255, 255, 255, 0.82);
+    max-width: 40ch;
+    font-size: 1.05rem;
+    line-height: 1.65;
+  }
+
+  /* Ghost variant for secondary button on dark hero */
+  .hero-btn-ghost {
+    background: transparent !important;
+    border-color: rgba(255, 255, 255, 0.45) !important;
+    color: #fff !important;
+  }
+  .hero-btn-ghost:hover {
+    border-color: rgba(255, 255, 255, 0.85) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+  }
+
+  .hero-v3 .hero-points {
+    color: rgba(255, 255, 255, 0.65);
+    font-size: 0.875rem;
+    margin-top: 1.5rem;
+  }
+
+  /* Scroll hint — animated chevron */
+  .hero-scroll-hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+  }
+  .hero-scroll-hint span {
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-right: 2px solid rgba(255,255,255,0.5);
+    border-bottom: 2px solid rgba(255,255,255,0.5);
+    transform: rotate(45deg);
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+  @keyframes scrollBounce {
+    0%, 100% { transform: rotate(45deg) translateY(0); opacity: 0.5; }
+    50%       { transform: rotate(45deg) translateY(6px); opacity: 1; }
+  }
+</style>
+
+<!-- ── GSAP HERO ANIMATION ────────────────────────────────────────────── -->
+<script>
+  import gsap from 'gsap';
+  import { SplitText } from 'gsap/SplitText';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(SplitText, ScrollTrigger);
+
+  // Hero entrance — runs once on load
+  const heroH1 = document.querySelector<HTMLElement>('.js-hero-h1');
+  if (heroH1) {
+    const split = new SplitText(heroH1, { type: 'words' });
+
+    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
+    tl
+      .from('.js-hero-eyebrow', { autoAlpha: 0, y: 18, duration: 0.7 })
+      .from(split.words,        { autoAlpha: 0, y: 52, stagger: 0.055, duration: 0.85 }, '-=0.3')
+      .from('.js-hero-text',    { autoAlpha: 0, y: 22, duration: 0.7 }, '-=0.35')
+      .from('.js-hero-actions', { autoAlpha: 0, y: 22, duration: 0.6 }, '-=0.25')
+      .from('.js-hero-points li', { autoAlpha: 0, x: -16, stagger: 0.1, duration: 0.5 }, '-=0.15')
+      .from('.js-hero-scroll',  { autoAlpha: 0, duration: 0.8 }, '-=0.1');
+  }
+
+  // ScrollTrigger reveals for non-hero sections (replaces IntersectionObserver)
+  // Only enhances sections below the hero fold
+  ScrollTrigger.batch('.reveal', {
+    onEnter: (els) => gsap.from(els, {
+      autoAlpha: 0,
+      y: 30,
+      duration: 0.7,
+      ease: 'power2.out',
+      stagger: 0.1,
+    }),
+    start: 'top 88%',
+    once: true,
+  });
+
+  ScrollTrigger.batch('.reveal-delay', {
+    onEnter: (els) => gsap.from(els, {
+      autoAlpha: 0,
+      y: 30,
+      duration: 0.7,
+      ease: 'power2.out',
+      delay: 0.15,
+      stagger: 0.1,
+    }),
+    start: 'top 88%',
+    once: true,
+  });
+
+  ScrollTrigger.batch('.reveal-delay-2', {
+    onEnter: (els) => gsap.from(els, {
+      autoAlpha: 0,
+      y: 30,
+      duration: 0.7,
+      ease: 'power2.out',
+      delay: 0.3,
+      stagger: 0.1,
+    }),
+    start: 'top 88%',
+    once: true,
+  });
+</script>

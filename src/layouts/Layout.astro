@@ -1,0 +1,66 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
+
+export interface Props {
+  title: string;
+  description?: string;
+  canonical?: string;
+  ogImage?: string;
+  ogTitle?: string;
+  robots?: string;
+  jsonLd?: string | string[];
+  bodyClass?: string;
+  preloadImage?: string;
+  activePage?: string;
+  floatingWaLabel?: string;
+}
+
+const {
+  title,
+  description = '',
+  canonical = '',
+  ogImage = 'https://www.pimpimfotomatones.com/assets/img/pimpim-montaje-evento.webp',
+  ogTitle,
+  robots = 'index, follow',
+  jsonLd,
+  bodyClass = '',
+  preloadImage,
+  activePage = '',
+  floatingWaLabel,
+} = Astro.props;
+
+const resolvedOgTitle = ogTitle ?? title;
+const jsonLdArray = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {description && <meta name="description" content={description}>}
+  <meta name="author" content="Pimpim Fotomatones">
+  <meta name="robots" content={robots}>
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  {preloadImage && <link rel="preload" as="image" href={preloadImage} fetchpriority="high">}
+  {canonical && <link rel="canonical" href={canonical}>}
+  <meta property="og:title" content={resolvedOgTitle}>
+  {description && <meta property="og:description" content={description}>}
+  <meta property="og:type" content="website">
+  {canonical && <meta property="og:url" content={canonical}>}
+  <meta property="og:image" content={ogImage}>
+  <title>{title}</title>
+  <link rel="stylesheet" href="/styles.min.css">
+  {jsonLdArray.map(schema => (
+    <script type="application/ld+json" set:html={schema}></script>
+  ))}
+</head>
+<body class={bodyClass}>
+  <Nav activePage={activePage} />
+  <slot />
+  <Footer />
+  <FloatingWhatsApp label={floatingWaLabel} />
+  <script src="/script.js?v=20260603" is:inline></script>
+</body>
+</html>

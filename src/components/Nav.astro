@@ -1,0 +1,44 @@
+---
+interface Props {
+  activePage?: string;
+}
+const { activePage = '' } = Astro.props;
+---
+<header class="site-header">
+  <div class="wrap nav-bar">
+    <a class="brand" href="/" aria-label="Pimpim Fotomatones inicio">
+      <img class="brand-logo" src="/assets/img/pimpim-logo.webp" alt="" width="56" height="56">
+      <span>Pimpim Fotomatones</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" aria-controls="site-navigation" aria-expanded="false">
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+    <nav class="site-nav" id="site-navigation" aria-label="Navegación principal">
+      <details class="nav-dropdown">
+        <summary>Servicios</summary>
+        <div class="nav-dropdown-panel">
+          <a href="/fotomaton" class:list={[{ active: activePage === 'fotomaton' }]}>Fotomatón</a>
+          <a href="/videomaton" class:list={[{ active: activePage === 'videomaton' }]}>Videomatón</a>
+          <a href="/fotomaton-espejo" class:list={[{ active: activePage === 'fotomaton-espejo' }]}>Fotomatón Espejo</a>
+          <a href="/plataforma-360" class:list={[{ active: activePage === 'plataforma-360' }]}>Plataforma 360</a>
+        </div>
+      </details>
+      <details class="nav-dropdown">
+        <summary>Extras</summary>
+        <div class="nav-dropdown-panel">
+          <a href="/photocall">Photocall</a>
+          <a href="/fondos">Fondos</a>
+          <a href="/sofa-chester">Sofá Chester</a>
+          <a href="/neones">Neones</a>
+          <a href="/telefono-videomensajes">Teléfono</a>
+        </div>
+      </details>
+      <a href="/eventos" class:list={[{ active: activePage === 'eventos' }]}>Eventos</a>
+      <a href="/opiniones" class:list={[{ active: activePage === 'opiniones' }]}>Opiniones</a>
+      <a href="/quienes-somos" class:list={[{ active: activePage === 'quienes-somos' }]}>Quiénes somos</a>
+      <a class="nav-cta" href="/#presupuesto">Presupuesto</a>
+    </nav>
+  </div>
+</header>
