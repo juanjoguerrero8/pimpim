@@ -1,6 +1,5 @@
 (function () {
-    // === GA4 — Reemplaza 'G-XXXXXXXXXX' con tu Measurement ID de Google Analytics ===
-    const GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    const GA4_MEASUREMENT_ID = 'G-8YWVZ3VPJ2';
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
     gtag('js', new Date());
