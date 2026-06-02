@@ -20,6 +20,72 @@
         revealElements.forEach((element) => observer.observe(element));
     }
 
+    const navToggle = document.querySelector(".nav-toggle");
+    const siteNav = document.querySelector(".site-nav");
+    const desktopNavQuery = window.matchMedia("(min-width: 861px)");
+
+    const closeOpenDropdowns = () => {
+        document.querySelectorAll(".site-nav .nav-dropdown[open]").forEach((dropdown) => {
+            dropdown.removeAttribute("open");
+        });
+    };
+
+    const setMenuOpen = (isOpen) => {
+        document.body.classList.toggle("is-nav-open", isOpen);
+
+        if (!navToggle) {
+            return;
+        }
+
+        navToggle.setAttribute("aria-expanded", String(isOpen));
+        navToggle.setAttribute("aria-label", isOpen ? "Cerrar menú" : "Abrir menú");
+
+        if (!isOpen) {
+            closeOpenDropdowns();
+        }
+    };
+
+    if (navToggle && siteNav) {
+        navToggle.addEventListener("click", () => {
+            setMenuOpen(!document.body.classList.contains("is-nav-open"));
+        });
+
+        siteNav.addEventListener("click", (event) => {
+            if (event.target.closest("a")) {
+                setMenuOpen(false);
+            }
+        });
+
+        document.addEventListener("click", (event) => {
+            if (!document.body.classList.contains("is-nav-open") || event.target.closest(".site-header")) {
+                return;
+            }
+
+            setMenuOpen(false);
+        });
+
+        document.addEventListener("keydown", (event) => {
+            if (event.key !== "Escape" || !document.body.classList.contains("is-nav-open")) {
+                return;
+            }
+
+            setMenuOpen(false);
+            navToggle.focus();
+        });
+
+        const closeMenuOnDesktop = () => {
+            if (desktopNavQuery.matches) {
+                setMenuOpen(false);
+            }
+        };
+
+        if ("addEventListener" in desktopNavQuery) {
+            desktopNavQuery.addEventListener("change", closeMenuOnDesktop);
+        } else if ("addListener" in desktopNavQuery) {
+            desktopNavQuery.addListener(closeMenuOnDesktop);
+        }
+    }
+
     document.querySelectorAll(".site-nav .nav-dropdown").forEach((dropdown) => {
         dropdown.addEventListener("toggle", () => {
             if (!dropdown.open) {
