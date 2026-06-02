@@ -106,12 +106,11 @@ textarea {
 .brand {
     display: inline-flex;
     align-items: center;
-    gap: 0.7rem;
+    gap: 0.8rem;
     font-weight: 800;
 }
 
-.brand-mark,
-.brand-logo {
+.brand-mark {
     display: grid;
     place-items: center;
     width: 2.4rem;
@@ -124,7 +123,12 @@ textarea {
 }
 
 .brand-logo {
-    object-fit: cover;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    object-fit: contain;
+    background: transparent;
+    box-shadow: 0 0 0 1px rgba(33, 31, 29, 0.08);
 }
 
 .site-nav {
@@ -1276,6 +1280,11 @@ p {
 }
 
 @media (max-width: 680px) {
+    .brand-logo {
+        width: 3rem;
+        height: 3rem;
+    }
+
     .site-nav {
         width: 100%;
         display: grid;
