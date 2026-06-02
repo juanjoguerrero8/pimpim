@@ -20,6 +20,20 @@
         revealElements.forEach((element) => observer.observe(element));
     }
 
+    document.querySelectorAll(".site-nav .nav-dropdown").forEach((dropdown) => {
+        dropdown.addEventListener("toggle", () => {
+            if (!dropdown.open) {
+                return;
+            }
+
+            document.querySelectorAll(".site-nav .nav-dropdown[open]").forEach((openDropdown) => {
+                if (openDropdown !== dropdown) {
+                    openDropdown.removeAttribute("open");
+                }
+            });
+        });
+    });
+
     const emitTrackingEvent = (name, payload) => {
         const detail = {
             event: name,
