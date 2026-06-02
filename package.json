@@ -9,7 +9,11 @@
     "validate:site": "node scripts/validate-site.js",
     "validate:html": "html-validate *.html",
     "audit:lighthouse": "npm run build:css && node scripts/run-lighthouse.js",
-    "audit": "npm run build:css && npm run validate:site && npm run validate:html"
+    "audit": "npm run build:css && npm run validate:site && npm run validate:html",
+    "market:analyze": "python3 scripts/market/analyze_page.py",
+    "market:competitors": "python3 scripts/market/competitor_scanner.py",
+    "market:report": "python3 scripts/market/generate_pdf_report.py",
+    "market:social": "python3 scripts/market/social_calendar.py"
   },
   "devDependencies": {
     "@fontsource-variable/fraunces": "^5.2.9",
@@ -18,5 +22,8 @@
     "fast-xml-parser": "^5.8.0",
     "html-validate": "^11.5.0",
     "lighthouse": "^13.3.0"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0"
   }
 }
