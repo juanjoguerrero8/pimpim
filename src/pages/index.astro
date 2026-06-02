@@ -56,7 +56,7 @@ const jsonLdFaq = JSON.stringify({
   <main id="inicio">
 
     <!-- ── HERO V3.0 ─────────────────────────────────────────────────── -->
-    <section class="hero-v3" aria-label="Presentación">
+    <section class="hero-v3" aria-label="Presentación" style="background:#111;color:#fff;position:relative;min-height:92vh;display:flex;align-items:center;overflow:hidden;">
       <div class="hero-bg" aria-hidden="true" style={`background-image: url('${(import.meta.env.BASE_URL ?? '/').replace(/\/?$/, '/')}assets/img/pimpim-invitados-atrezzo.webp')`}></div>
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="wrap hero-grid">
@@ -596,62 +596,41 @@ const jsonLdFaq = JSON.stringify({
 <script>
   import gsap from 'gsap';
   import { SplitText } from 'gsap/SplitText';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-  gsap.registerPlugin(SplitText, ScrollTrigger);
+  gsap.registerPlugin(SplitText);
 
-  // Hero entrance — runs once on load
-  const heroH1 = document.querySelector<HTMLElement>('.js-hero-h1');
-  if (heroH1) {
-    const split = new SplitText(heroH1, { type: 'words' });
+  const heroFallbackEls = [
+    '.js-hero-eyebrow', '.js-hero-h1', '.js-hero-text',
+    '.js-hero-actions', '.js-hero-scroll',
+  ];
 
-    const tl = gsap.timeline({ defaults: { ease: 'power3.out' } });
-    tl
-      .from('.js-hero-eyebrow', { autoAlpha: 0, y: 18, duration: 0.7 })
-      .from(split.words,        { autoAlpha: 0, y: 52, stagger: 0.055, duration: 0.85 }, '-=0.3')
-      .from('.js-hero-text',    { autoAlpha: 0, y: 22, duration: 0.7 }, '-=0.35')
-      .from('.js-hero-actions', { autoAlpha: 0, y: 22, duration: 0.6 }, '-=0.25')
-      .from('.js-hero-points li', { autoAlpha: 0, x: -16, stagger: 0.1, duration: 0.5 }, '-=0.15')
-      .from('.js-hero-scroll',  { autoAlpha: 0, duration: 0.8 }, '-=0.1');
+  const showHero = () => {
+    [...heroFallbackEls, '.js-hero-points li'].forEach((sel) => {
+      document.querySelectorAll(sel).forEach((el) => {
+        (el as HTMLElement).style.removeProperty('opacity');
+        (el as HTMLElement).style.removeProperty('visibility');
+        (el as HTMLElement).style.removeProperty('transform');
+      });
+    });
+  };
+
+  try {
+    const heroH1 = document.querySelector<HTMLElement>('.js-hero-h1');
+    if (heroH1) {
+      const split = new SplitText(heroH1, { type: 'words' });
+      const tl = gsap.timeline({
+        defaults: { ease: 'power3.out' },
+        onComplete() { split.revert(); },
+      });
+      tl
+        .from('.js-hero-eyebrow',   { autoAlpha: 0, y: 18,  duration: 0.7 })
+        .from(split.words,          { autoAlpha: 0, y: 52,  stagger: 0.055, duration: 0.85 }, '-=0.3')
+        .from('.js-hero-text',      { autoAlpha: 0, y: 22,  duration: 0.7  }, '-=0.35')
+        .from('.js-hero-actions',   { autoAlpha: 0, y: 22,  duration: 0.6  }, '-=0.25')
+        .from('.js-hero-points li', { autoAlpha: 0, x: -16, stagger: 0.1, duration: 0.5 }, '-=0.15')
+        .from('.js-hero-scroll',    { autoAlpha: 0, duration: 0.8 }, '-=0.1');
+    }
+  } catch (_) {
+    showHero();
   }
-
-  // ScrollTrigger reveals for non-hero sections (replaces IntersectionObserver)
-  // Only enhances sections below the hero fold
-  ScrollTrigger.batch('.reveal', {
-    onEnter: (els) => gsap.from(els, {
-      autoAlpha: 0,
-      y: 30,
-      duration: 0.7,
-      ease: 'power2.out',
-      stagger: 0.1,
-    }),
-    start: 'top 88%',
-    once: true,
-  });
-
-  ScrollTrigger.batch('.reveal-delay', {
-    onEnter: (els) => gsap.from(els, {
-      autoAlpha: 0,
-      y: 30,
-      duration: 0.7,
-      ease: 'power2.out',
-      delay: 0.15,
-      stagger: 0.1,
-    }),
-    start: 'top 88%',
-    once: true,
-  });
-
-  ScrollTrigger.batch('.reveal-delay-2', {
-    onEnter: (els) => gsap.from(els, {
-      autoAlpha: 0,
-      y: 30,
-      duration: 0.7,
-      ease: 'power2.out',
-      delay: 0.3,
-      stagger: 0.1,
-    }),
-    start: 'top 88%',
-    once: true,
-  });
 </script>
