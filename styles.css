@@ -38,6 +38,11 @@ html {
     scroll-behavior: smooth;
 }
 
+section[id],
+.pricing-card[id] {
+    scroll-margin-top: 96px;
+}
+
 body {
     margin: 0;
     font-family: "Manrope", Arial, sans-serif;
@@ -521,6 +526,13 @@ p {
 .section-heading p {
     max-width: 68ch;
     margin: 1rem 0 0;
+}
+
+.section-footnote {
+    max-width: 74ch;
+    margin: 1.25rem 0 0;
+    color: var(--muted);
+    font-weight: 700;
 }
 
 .cards-grid,
