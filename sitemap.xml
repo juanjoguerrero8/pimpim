@@ -2,118 +2,182 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>https://www.pimpimfotomatones.com/</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/fotomaton.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/videomaton.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/fotomaton-espejo.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/plataforma-360.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
+        <loc>https://www.pimpimfotomatones.com/combos.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
         <loc>https://www.pimpimfotomatones.com/photocall.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/fondos.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/sofa-chester.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/neones.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/telefono-videomensajes.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/bodas.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/quienes-somos.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/madrid.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/guadalajara.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.85</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/alcala-de-henares.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.78</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/torrejon-de-ardoz.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.78</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/coslada.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/san-fernando-de-henares.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/meco.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/mejorada-del-campo.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.72</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/villalbilla.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.72</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/paracuellos-del-jarama.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.72</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/azuqueca-de-henares.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.78</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/alovera.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/cabanillas-del-campo.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/marchamalo.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.72</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/villanueva-de-la-torre.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.72</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/opiniones.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://www.pimpimfotomatones.com/eventos.html</loc>
+        <lastmod>2026-06-03</lastmod>
+        <changefreq>monthly</changefreq>
         <priority>0.75</priority>
     </url>
 </urlset>

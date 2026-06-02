@@ -1,4 +1,24 @@
 (function () {
+    // === GA4 — Reemplaza 'G-XXXXXXXXXX' con tu Measurement ID de Google Analytics ===
+    const GA4_MEASUREMENT_ID = 'G-XXXXXXXXXX';
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', GA4_MEASUREMENT_ID, { send_page_view: true });
+    if (GA4_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+        const gaScript = document.createElement('script');
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_MEASUREMENT_ID;
+        gaScript.async = true;
+        document.head.appendChild(gaScript);
+    }
+
+    const GA4_EVENT_MAP = {
+        whatsapp_click:     ['contact',        { method: 'whatsapp' }],
+        form_submit:        ['generate_lead',   { method: 'form' }],
+        service_page_click: ['select_content',  { content_type: 'service' }],
+        form_button_click:  ['form_start',      {}],
+    };
+
     const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealElements = document.querySelectorAll(".reveal");
 
@@ -235,6 +255,16 @@
         if (Array.isArray(window.dataLayer)) {
             window.dataLayer.push(detail);
         }
+
+        if (GA4_MEASUREMENT_ID !== 'G-XXXXXXXXXX') {
+            const mapping = GA4_EVENT_MAP[name];
+            const [ga4Name, ga4Extras] = mapping || [name, {}];
+            gtag('event', ga4Name, {
+                event_label: payload.label || '',
+                attribution_source: attribution.source_summary || '',
+                ...ga4Extras
+            });
+        }
     };
 
     document.querySelectorAll("[data-dynamic-redirect]").forEach((input) => {
@@ -254,8 +284,50 @@
         });
     });
 
+    const validateField = (input) => {
+        const form = input.closest('form');
+        if (!form) return true;
+
+        const errorEl = form.querySelector(`[data-error-for="${input.name}"]`);
+        let message = '';
+
+        if (input.type === 'checkbox') {
+            if (!input.checked) message = 'Debes aceptar la política de privacidad.';
+        } else if (input.tagName === 'SELECT') {
+            if (!input.value) message = 'Selecciona una opción.';
+        } else if (!input.value.trim()) {
+            message = 'Este campo es obligatorio.';
+        } else if (input.type === 'email' && !input.validity.valid) {
+            message = 'Introduce un correo electrónico válido.';
+        } else if (input.type === 'tel' && !/^[+]?[\d\s\-(). ]{9,15}$/.test(input.value.trim())) {
+            message = 'Introduce un número de teléfono válido (mínimo 9 dígitos).';
+        }
+
+        input.classList.toggle('field-invalid', Boolean(message));
+        if (errorEl) {
+            errorEl.textContent = message;
+            errorEl.hidden = !message;
+        }
+
+        return !message;
+    };
+
     document.querySelectorAll("[data-track-form]").forEach((form) => {
-        form.addEventListener("submit", () => {
+        form.querySelectorAll("input[required], select[required]").forEach((input) => {
+            const eventType = (input.type === 'checkbox' || input.tagName === 'SELECT') ? 'change' : 'blur';
+            input.addEventListener(eventType, () => validateField(input));
+        });
+
+        form.addEventListener("submit", (event) => {
+            const requiredFields = Array.from(form.querySelectorAll("input[required], select[required]"));
+            const firstInvalid = requiredFields.find((f) => !validateField(f));
+
+            if (firstInvalid) {
+                event.preventDefault();
+                firstInvalid.focus();
+                return;
+            }
+
             emitTrackingEvent("form_submit", {
                 label: form.dataset.trackForm,
                 href: form.action
